@@ -13,7 +13,6 @@ const Hero = () => {
 				backgroundPosition: "center",
 				backgroundAttachment: "fixed",
 			}}>
-			{/* Overlay for better readability */}
 			<div className="absolute inset-0 bg-black/50"></div>
 
 			<div className="relative z-10 max-w-3xl px-6 bg-white/10 backdrop-blur-md rounded-xl p-10 shadow-lg">

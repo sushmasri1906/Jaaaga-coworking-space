@@ -6,7 +6,6 @@ const Footer = () => {
 		<footer className="bg-gray-900 text-white py-10">
 			<div className="max-w-6xl mx-auto px-6">
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-					{/* About Section */}
 					<div>
 						<h3 className="text-xl font-semibold text-yellow-400">
 							Jaaaga Coworking Space
@@ -17,7 +16,6 @@ const Footer = () => {
 						</p>
 					</div>
 
-					{/* Quick Links */}
 					<div>
 						<h3 className="text-xl font-semibold text-yellow-400">
 							Quick Links
@@ -54,7 +52,6 @@ const Footer = () => {
 						</ul>
 					</div>
 
-					{/* Contact Section */}
 					<div>
 						<h3 className="text-xl font-semibold text-yellow-400">
 							Get in Touch
@@ -67,7 +64,6 @@ const Footer = () => {
 					</div>
 				</div>
 
-				{/* Social Media & Copyright */}
 				<div className="border-t border-gray-700 mt-8 pt-5 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
 					<p>
 						© {new Date().getFullYear()} Jaaaga Coworking space. All Rights

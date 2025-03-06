@@ -48,7 +48,6 @@ const Navbar = () => {
 				</button>
 			</div>
 
-			{/* Mobile Menu */}
 			{isOpen && (
 				<div className="md:hidden bg-white shadow-lg absolute w-full left-0 top-16 py-4 z-50">
 					{menuItems.map(({ name, href, icon }) => (
