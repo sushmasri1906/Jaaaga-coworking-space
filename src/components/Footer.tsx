@@ -60,7 +60,7 @@ const Footer = () => {
 						<p className="text-gray-400 text-sm">
 							📧 officetoletinfo@gmail.com
 						</p>
-						<p className="text-gray-400 text-sm">📞 +91 98765 43210</p>
+						<p className="text-gray-400 text-sm">📞 +91 9160666681</p>
 					</div>
 				</div>
 
