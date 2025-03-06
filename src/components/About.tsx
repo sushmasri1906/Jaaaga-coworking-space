@@ -14,7 +14,7 @@ const About = () => {
 					collaborative environment.
 				</p>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-10 ">
 					{/* Left Side - Description */}
 					<div className="bg-gray-100 p-6 rounded-lg shadow-lg border-l-4 border-yellow-400">
 						<h3 className="text-2xl font-semibold text-gray-900">
