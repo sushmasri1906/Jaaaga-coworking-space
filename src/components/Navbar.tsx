@@ -18,12 +18,11 @@ const Navbar = () => {
 		{ name: "Home", href: "/", icon: <FaHome /> },
 		{ name: "About", href: "/about", icon: <FaUsers /> },
 		{ name: "WorkSpaces", href: "/spaces", icon: <FaBuilding /> },
-
 		{ name: "Contact", href: "/contact", icon: <FaEnvelope /> },
 	];
 
 	return (
-		<nav className="bg-white shadow-md">
+		<nav className="bg-white shadow-md fixed w-full top-0 z-50">
 			<div className="container mx-auto px-6 py-4 flex justify-between items-center">
 				<Link href="/">
 					<span className="text-2xl font-bold text-yellow-400 cursor-pointer">
@@ -51,7 +50,7 @@ const Navbar = () => {
 
 			{/* Mobile Menu */}
 			{isOpen && (
-				<div className="md:hidden bg-white shadow-md absolute w-full left-0 top-16 py-4">
+				<div className="md:hidden bg-white shadow-lg absolute w-full left-0 top-16 py-4 z-50">
 					{menuItems.map(({ name, href, icon }) => (
 						<Link
 							key={name}
