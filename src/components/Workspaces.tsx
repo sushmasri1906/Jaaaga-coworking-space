@@ -69,40 +69,49 @@ const Workspaces = () => {
 		},
 	];
 
-	// Show only 6 workspaces initially
 	const visibleWorkspaces = showAll ? workspaces : workspaces.slice(0, 6);
 
 	return (
-		<section className="py-16 bg-white text-center">
-			<h2 className="text-3xl font-bold text-gray-800">Available Workspaces</h2>
-			<p className="text-gray-600 mt-2">
-				Choose the perfect workspace for your needs
-			</p>
+		<section className="py-16 bg-gray-50 text-center">
+			<div className="max-w-6xl mx-auto px-6">
+				<h2 className="text-4xl font-bold text-gray-800">
+					Available Workspaces
+				</h2>
+				<p className="text-gray-600 mt-2 text-lg">
+					Choose the perfect workspace for your needs.
+				</p>
 
-			<div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
-				{visibleWorkspaces.map((workspace, index) => (
-					<div key={index} className="bg-gray-100 p-6 rounded-lg shadow-md">
-						<Image
-							src={workspace.image}
-							alt={workspace.name}
-							className="w-full h-40 object-cover rounded-md"
-							width={500}
-							height={300}
-						/>
-						<h3 className="mt-4 text-xl font-semibold">{workspace.name}</h3>
-						<p className="text-gray-600 mt-2">{workspace.description}</p>
-						<p className="text-yellow-500 font-bold mt-2">{workspace.price}</p>
-					</div>
-				))}
-			</div>
+				<div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+					{visibleWorkspaces.map((workspace, index) => (
+						<div
+							key={index}
+							className="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+							<div className="relative w-full h-48 rounded-lg overflow-hidden">
+								<Image
+									src={workspace.image}
+									alt={workspace.name}
+									layout="fill"
+									objectFit="cover"
+								/>
+							</div>
+							<h3 className="mt-4 text-2xl font-semibold text-gray-800">
+								{workspace.name}
+							</h3>
+							<p className="text-gray-600 mt-2">{workspace.description}</p>
+							<p className="text-yellow-500 font-bold text-lg mt-3">
+								{workspace.price}
+							</p>
+						</div>
+					))}
+				</div>
 
-			{/* "See More" Button */}
-			<div className="mt-8">
-				<button
-					onClick={() => setShowAll(!showAll)}
-					className="bg-yellow-400 text-white px-6 py-2 rounded-lg font-semibold hover:bg-yellow-700 transition">
-					{showAll ? "See Less" : "See More"}
-				</button>
+				<div className="mt-10">
+					<button
+						onClick={() => setShowAll(!showAll)}
+						className="px-6 py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-semibold rounded-lg shadow-md transition duration-300 hover:from-yellow-500 hover:to-yellow-600 hover:scale-105">
+						{showAll ? "See Less" : "See More"}
+					</button>
+				</div>
 			</div>
 		</section>
 	);

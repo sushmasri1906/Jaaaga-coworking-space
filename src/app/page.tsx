@@ -7,14 +7,14 @@ import Contact from "@/components/Contact";
 
 function page() {
 	return (
-		<div className="mt-10">
+		<>
 			<Hero />
+			<Workspaces />
 			<Features />
 
-			<Workspaces />
 			<Testimonials />
 			<Contact />
-		</div>
+		</>
 	);
 }
 

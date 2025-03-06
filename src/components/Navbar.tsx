@@ -22,7 +22,7 @@ const Navbar = () => {
 	];
 
 	return (
-		<nav className="bg-white shadow-md fixed w-full top-0 z-50 ">
+		<nav className="bg-white  fixed w-full top-0 z-50 ">
 			<div className="container mx-auto px-6 py-4 flex justify-between items-center">
 				<Link href="/">
 					<span className="text-2xl font-bold text-yellow-400 cursor-pointer">

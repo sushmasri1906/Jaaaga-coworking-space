@@ -6,25 +6,33 @@ import React from "react";
 const Hero = () => {
 	return (
 		<section
-			className="relative bg-cover bg-center h-screen flex items-center justify-center text-center text-white opacity-90"
-			style={{ backgroundImage: "url('/hero-bg.jpg')" }}>
-			<div className="relative z-10 max-w-3xl px-6 bg-white/5 backdrop-blur-sm rounded-lg p-8">
-				<h1 className="text-4xl md:text-6xl font-bold text-gray-900">
+			className="relative h-screen flex items-center justify-center text-center text-white"
+			style={{
+				backgroundImage: "url('/hero-bg.jpg')",
+				backgroundSize: "cover",
+				backgroundPosition: "center",
+				backgroundAttachment: "fixed",
+			}}>
+			{/* Overlay for better readability */}
+			<div className="absolute inset-0 bg-black/50"></div>
+
+			<div className="relative z-10 max-w-3xl px-6 bg-white/10 backdrop-blur-md rounded-xl p-10 shadow-lg">
+				<h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
 					Welcome to <span className="text-yellow-500">Jaaaga Coworking</span>
 				</h1>
-				<p className="mt-4 text-xl font-semibold md:text-xl text-white">
+				<p className="mt-4 text-lg md:text-xl font-medium text-gray-200">
 					A premium coworking space designed for freelancers, startups, and
 					businesses to thrive.
 				</p>
 
 				<div className="mt-6 flex justify-center space-x-4">
 					<Link href="/contact">
-						<button className="bg-yellow-500 text-black px-6 py-3 rounded-md text-lg font-medium hover:bg-yellow-600 transition">
+						<button className="bg-yellow-500 text-black px-6 py-3 rounded-lg text-lg font-semibold hover:bg-yellow-600 transition-all shadow-md">
 							Contact Us
 						</button>
 					</Link>
 					<Link href="/contact">
-						<button className="border border-yellow-500 px-6 py-3 rounded-md text-lg font-medium hover:bg-yellow-500 hover:text-black transition">
+						<button className="border border-yellow-500 px-6 py-3 rounded-lg text-lg font-semibold text-yellow-500 hover:bg-yellow-500 hover:text-black transition-all shadow-md">
 							Location
 						</button>
 					</Link>

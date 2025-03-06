@@ -39,22 +39,26 @@ const WhyChooseUs = () => {
 	];
 
 	return (
-		<section className="py-16 bg-gray-100 text-center">
-			<h2 className="text-3xl font-bold text-gray-800">Why Choose Us?</h2>
-			<p className="text-yellow-400 mt-2">
-				Discover the benefits of working in a shared workspace.
-			</p>
+		<section className="py-16 text-center">
+			<div className="max-w-6xl mx-auto px-6">
+				<h2 className="text-4xl font-bold text-gray-800">Why Choose Us?</h2>
+				<p className="text-yellow-500 mt-2 text-lg">
+					Discover the benefits of working in a shared workspace.
+				</p>
 
-			<div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
-				{features.map((feature, index) => (
-					<div
-						key={index}
-						className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
-						<div className="text-4xl">{feature.icon}</div>
-						<h3 className="mt-4 text-xl font-semibold">{feature.title}</h3>
-						<p className="text-gray-600 mt-2">{feature.description}</p>
-					</div>
-				))}
+				<div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+					{features.map((feature, index) => (
+						<div
+							key={index}
+							className="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+							<div className="text-5xl">{feature.icon}</div>
+							<h3 className="mt-4 text-2xl font-semibold text-gray-800">
+								{feature.title}
+							</h3>
+							<p className="text-gray-600 mt-2">{feature.description}</p>
+						</div>
+					))}
+				</div>
 			</div>
 		</section>
 	);
