@@ -14,8 +14,6 @@ const Hero = () => {
 				backgroundPosition: "center",
 				backgroundAttachment: "fixed",
 			}}>
-			<div className="absolute inset-0 bg-black/50"></div>
-
 			<div className="relative z-10 max-w-3xl px-6 bg-white/10 backdrop-blur-md rounded-xl p-10 shadow-lg">
 				<h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
 					Welcome to{" "}
