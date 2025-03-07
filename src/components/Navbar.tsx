@@ -22,39 +22,42 @@ const Navbar = () => {
 	];
 
 	return (
-		<nav className="bg-white  fixed w-full top-0 z-50 ">
+		<nav className="bg-white fixed w-full top-0 z-50 shadow-md">
 			<div className="container mx-auto px-6 py-4 flex justify-between items-center">
 				<Link href="/">
 					<span className="text-2xl font-bold text-yellow-400 cursor-pointer">
-						Jaaaga <span className="text-gray-800">Coworking space</span>
+						Jaaaga <span className="text-black">Coworking Space</span>
 					</span>
 				</Link>
 
+				{/* Desktop Menu */}
 				<div className="hidden md:flex space-x-6 items-center">
 					{menuItems.map(({ name, href, icon }) => (
 						<Link
 							key={name}
 							href={href}
-							className="flex items-center space-x-2 text-gray-700 hover:text-yellow-500">
+							className="flex items-center space-x-2 text-black hover:text-yellow-400 transition duration-300">
 							{icon} <span>{name}</span>
 						</Link>
 					))}
 				</div>
 
+				{/* Mobile Menu Button */}
 				<button
-					className="md:hidden text-yellow-500"
+					className="md:hidden text-yellow-400"
 					onClick={() => setIsOpen(!isOpen)}>
 					{isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
 				</button>
 			</div>
 
+			{/* Mobile Menu */}
 			{isOpen && (
 				<div className="md:hidden bg-white shadow-lg absolute w-full left-0 top-16 py-4 z-50">
 					{menuItems.map(({ name, href, icon }) => (
 						<Link
 							key={name}
 							href={href}
-							className="flex items-center px-6 py-3 text-gray-700 hover:text-yellow-500">
+							className="flex items-center px-6 py-3 text-black hover:text-yellow-400 transition duration-300">
 							{icon} <span className="ml-2">{name}</span>
 						</Link>
 					))}

@@ -8,7 +8,8 @@ const Hero = () => {
 		<section
 			className="relative h-screen flex items-center justify-center text-center text-white"
 			style={{
-				backgroundImage: "url('/hero-bg.jpg')",
+				backgroundImage:
+					"url('https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741324130/12_Seats_Ac_2_klksqn.jpg')",
 				backgroundSize: "cover",
 				backgroundPosition: "center",
 				backgroundAttachment: "fixed",
@@ -17,7 +18,8 @@ const Hero = () => {
 
 			<div className="relative z-10 max-w-3xl px-6 bg-white/10 backdrop-blur-md rounded-xl p-10 shadow-lg">
 				<h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
-					Welcome to <span className="text-yellow-500">Jaaaga Coworking</span>
+					Welcome to{" "}
+					<span className="text-yellow-500">Jaaaga Coworking Space</span>
 				</h1>
 				<p className="mt-4 text-lg md:text-xl font-medium text-gray-200">
 					A premium coworking space designed for freelancers, startups, and

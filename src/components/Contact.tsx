@@ -33,13 +33,13 @@ const Contact = () => {
 				<h2 className="text-3xl font-bold text-center text-gray-800">
 					Contact Us
 				</h2>
-				<p className="text-center text-yellow-400 mt-2">
+				<p className="text-center text-gray-800 mt-2">
 					We&apos;d love to hear from you!
 				</p>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
 					<div className="bg-white p-6 rounded-lg shadow-lg border border-yellow-400">
-						<h3 className="text-xl font-semibold text-yellow-400">
+						<h3 className="text-xl font-semibold text-gray-800">
 							Our Location
 						</h3>
 						<p className="text-gray-800 mt-2">
@@ -47,7 +47,7 @@ const Contact = () => {
 						</p>
 						<div className="mt-4 space-y-4">
 							<p className="flex items-center text-gray-800">
-								<FaMapMarkerAlt className="text-yellow-400 mr-2" />
+								<FaMapMarkerAlt className="text-yellow-400 mr-2 w-6 h-6" />
 								<strong>Address:</strong> Flat 102, RR Heights, Ameerpet,
 								Hyderabad, Telangana 500038
 							</p>
@@ -77,7 +77,7 @@ const Contact = () => {
 					</div>
 
 					<div className="bg-white p-6 rounded-lg shadow-lg border border-yellow-400">
-						<h3 className="text-xl font-semibold text-yellow-400">
+						<h3 className="text-xl font-semibold text-gray-800">
 							Send Us a Message
 						</h3>
 						<form className="mt-4 space-y-4" onSubmit={handleSubmit}>
