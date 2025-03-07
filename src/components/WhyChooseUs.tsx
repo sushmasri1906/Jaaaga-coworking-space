@@ -39,10 +39,10 @@ const WhyChooseUs = () => {
 	];
 
 	return (
-		<section className="py-16 text-center">
+		<section className="py-16 text-center bg-white">
 			<div className="max-w-6xl mx-auto px-6">
 				<h2 className="text-4xl font-bold text-gray-800">Why Choose Us?</h2>
-				<p className="text-yellow-500 mt-2 text-lg">
+				<p className="text-gray-800 mt-2 text-lg">
 					Discover the benefits of working in a shared workspace.
 				</p>
 
