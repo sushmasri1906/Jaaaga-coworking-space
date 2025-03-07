@@ -49,7 +49,7 @@ const renderStars = (rating: number) => {
 
 const Testimonials = () => {
 	return (
-		<section className="py-16 bg-gray-50 text-center">
+		<section className="py-16 bg-yellow-400 text-center">
 			<h2 className="text-3xl font-bold text-gray-800">What Our Members Say</h2>
 			<p className="text-gray-800 mt-2">Reviews from happy members</p>
 
