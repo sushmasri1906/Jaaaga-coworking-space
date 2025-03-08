@@ -5,10 +5,12 @@ const Footer = () => {
 	return (
 		<footer className="bg-gray-900 text-white py-10 relative mt-12">
 			{/* CTA Box - Positioned on Footer */}
-			<div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-[90%] max-w-3xl bg-yellow-400 text-white text-center py-8 rounded-2xl shadow-lg px-6 md:px-12">
+			<div className="absolute -top-24 left-1/2 transform -translate-x-1/2 w-[90%] max-w-3xl bg-yellow-400 text-white text-center py-8 rounded-2xl shadow-lg px-6 md:px-12">
 				<h2 className="text-2xl md:text-3xl font-bold mb-4">
-					Would you like to join <span className="text-white">Hello-Bizz?</span>
+					Ready to Elevate Your Work at{" "}
+					<span className="text-white">Jaaaga Coworking Space?</span>
 				</h2>
+
 				<Link href="/join">
 					<button className="bg-white text-gray-900 font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 hover:bg-gray-200">
 						CLICK HERE NOW
@@ -16,7 +18,7 @@ const Footer = () => {
 				</Link>
 			</div>
 
-			<div className="max-w-6xl mx-auto px-6 mt-20">
+			<div className="max-w-6xl mx-auto p-6 mt-20 ">
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 					<div>
 						<h3 className="text-xl font-semibold text-yellow-400">
