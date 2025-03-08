@@ -10,7 +10,7 @@ const Hero = () => {
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			transition={{ duration: 1 }}
-			className="relative h-screen flex items-center justify-center text-center text-white"
+			className="relative h-screen flex items-center justify-center text-center text-white overflow-hidden"
 			style={{
 				backgroundImage:
 					"url('https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741324130/12_Seats_Ac_2_klksqn.jpg')",

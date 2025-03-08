@@ -59,7 +59,7 @@ const Testimonials = () => {
 					"url('https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741419739/plain-yellow-background-sz8rral13llcyqn8_abhjsu.png')",
 			}}>
 			<div className="relative z-10">
-				{/* Animated Heading */}
+				
 				<motion.h2
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}

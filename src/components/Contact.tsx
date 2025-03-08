@@ -29,8 +29,11 @@ const Contact = () => {
 	};
 
 	return (
-		<section className="py-16 bg-white">
-			<div className="max-w-4xl mx-auto px-6">
+		<section className="relative py-16 bg-white overflow-hidden">
+			{/* Raindrop Effect (Covers entire section) */}
+
+			{/* Content Wrapper */}
+			<div className="relative z-10 max-w-4xl mx-auto px-6">
 				<motion.h2
 					initial={{ opacity: 0, y: -20 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -39,6 +42,7 @@ const Contact = () => {
 					className="text-3xl font-bold text-center text-gray-800">
 					Contact Us
 				</motion.h2>
+
 				<motion.p
 					initial={{ opacity: 0, y: -10 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +58,7 @@ const Contact = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5 }}
 						viewport={{ once: true }}
-						className="bg-white p-6 rounded-lg shadow-lg border border-yellow-400">
+						className="bg-white p-6 rounded-lg shadow-lg border border-yellow-400 relative z-10">
 						<h3 className="text-xl font-semibold text-gray-800">
 							Our Location
 						</h3>
@@ -97,7 +101,7 @@ const Contact = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, delay: 0.2 }}
 						viewport={{ once: true }}
-						className="bg-white p-6 rounded-lg shadow-lg border border-yellow-400">
+						className="bg-white p-6 rounded-lg shadow-lg border border-yellow-400 relative z-10">
 						<h3 className="text-xl font-semibold text-gray-800">
 							Send Us a Message
 						</h3>

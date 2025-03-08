@@ -36,7 +36,6 @@ const Footer = () => {
 
 			<div className="container mx-auto px-6 sm:px-8 md:px-12 mt-24">
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-					{/* About Section */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
@@ -50,7 +49,6 @@ const Footer = () => {
 						</p>
 					</motion.div>
 
-					{/* Quick Links */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
@@ -80,7 +78,6 @@ const Footer = () => {
 						</ul>
 					</motion.div>
 
-					{/* Contact Details */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
@@ -96,7 +93,6 @@ const Footer = () => {
 					</motion.div>
 				</div>
 
-				{/* Footer Bottom */}
 				<div className="border-t border-gray-700 mt-10 pt-5 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
 					<p>
 						&copy; {new Date().getFullYear()} Jaaaga Coworking Space. All Rights

@@ -35,7 +35,6 @@ const Navbar = () => {
 					</span>
 				</Link>
 
-				{/* Desktop Menu */}
 				<div className="hidden md:flex space-x-6 items-center">
 					{menuItems.map(({ name, href, icon }) => (
 						<motion.div
@@ -51,7 +50,6 @@ const Navbar = () => {
 					))}
 				</div>
 
-				{/* Mobile Menu Button */}
 				<motion.button
 					className="md:hidden text-yellow-400"
 					onClick={() => setIsOpen(!isOpen)}
@@ -60,7 +58,6 @@ const Navbar = () => {
 				</motion.button>
 			</div>
 
-			{/* Mobile Menu with Framer Motion */}
 			<AnimatePresence>
 				{isOpen && (
 					<motion.div

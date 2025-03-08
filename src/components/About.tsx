@@ -12,13 +12,11 @@ const About = () => {
 			animate={{ opacity: 1 }}
 			transition={{ duration: 1 }}
 			className="bg-gray-50 text-gray-900">
-			{/* Hero Section */}
 			<motion.div
 				initial={{ y: -50, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ duration: 1 }}
 				className="relative w-full h-[400px] flex items-center justify-center text-center">
-				{/* Background Image */}
 				<Image
 					src="https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741419739/plain-yellow-background-sz8rral13llcyqn8_abhjsu.png"
 					alt="Jaaaga Coworking Space"
@@ -31,7 +29,6 @@ const About = () => {
 				</h1>
 			</motion.div>
 
-			{/* About Content */}
 			<motion.div
 				initial={{ y: 50, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
@@ -54,7 +51,6 @@ const About = () => {
 					collaborative environment.
 				</motion.p>
 
-				{/* Features Section */}
 				<div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10">
 					<motion.div
 						initial={{ opacity: 0, x: -50 }}
@@ -116,7 +112,6 @@ const About = () => {
 					</motion.div>
 				</div>
 
-				{/* Call to Action */}
 				<motion.div
 					initial={{ opacity: 0, scale: 0.8 }}
 					animate={{ opacity: 1, scale: 1 }}
