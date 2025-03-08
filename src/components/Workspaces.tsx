@@ -82,7 +82,7 @@ const Workspaces = () => {
 	return (
 		<section className="py-16 bg-gray-50 text-center">
 			<div className="max-w-6xl mx-auto px-6">
-				<h2 className="text-4xl font-bold text-gray-800">
+				<h2 className="text-4xl font-bold text-yellow-400">
 					Available Workspaces
 				</h2>
 				<p className="text-gray-600 mt-2 text-lg">
