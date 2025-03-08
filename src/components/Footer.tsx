@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
 	return (
-		<footer className="bg-gray-900 text-white py-10 relative">
+		<footer className="bg-gray-900 text-white py-10 relative mt-12">
 			{/* CTA Box - Positioned on Footer */}
 			<div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-[90%] max-w-3xl bg-yellow-400 text-white text-center py-8 rounded-2xl shadow-lg px-6 md:px-12">
 				<h2 className="text-2xl md:text-3xl font-bold mb-4">
