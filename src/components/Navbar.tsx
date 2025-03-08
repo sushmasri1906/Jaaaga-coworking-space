@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
 	FaBars,
 	FaTimes,
@@ -22,7 +23,11 @@ const Navbar = () => {
 	];
 
 	return (
-		<nav className="bg-white fixed w-full top-0 z-50 shadow-md">
+		<motion.nav
+			initial={{ opacity: 0, y: -20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.9 }}
+			className="bg-white fixed w-full top-0 z-50 shadow-md">
 			<div className="container mx-auto px-6 py-4 flex justify-between items-center">
 				<Link href="/">
 					<span className="text-2xl font-bold text-yellow-400 cursor-pointer">
@@ -33,37 +38,53 @@ const Navbar = () => {
 				{/* Desktop Menu */}
 				<div className="hidden md:flex space-x-6 items-center">
 					{menuItems.map(({ name, href, icon }) => (
-						<Link
+						<motion.div
 							key={name}
-							href={href}
-							className="flex items-center space-x-2 text-black hover:text-yellow-400 transition duration-300">
-							{icon} <span>{name}</span>
-						</Link>
+							whileHover={{ scale: 1.1 }}
+							whileTap={{ scale: 0.9 }}>
+							<Link
+								href={href}
+								className="flex items-center space-x-2 text-black hover:text-yellow-400 transition duration-300">
+								{icon} <span>{name}</span>
+							</Link>
+						</motion.div>
 					))}
 				</div>
 
 				{/* Mobile Menu Button */}
-				<button
+				<motion.button
 					className="md:hidden text-yellow-400"
-					onClick={() => setIsOpen(!isOpen)}>
+					onClick={() => setIsOpen(!isOpen)}
+					whileTap={{ scale: 0.8 }}>
 					{isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-				</button>
+				</motion.button>
 			</div>
 
-			{/* Mobile Menu */}
-			{isOpen && (
-				<div className="md:hidden bg-white shadow-lg absolute w-full left-0 top-16 py-4 z-50">
-					{menuItems.map(({ name, href, icon }) => (
-						<Link
-							key={name}
-							href={href}
-							className="flex items-center px-6 py-3 text-black hover:text-yellow-400 transition duration-300">
-							{icon} <span className="ml-2">{name}</span>
-						</Link>
-					))}
-				</div>
-			)}
-		</nav>
+			{/* Mobile Menu with Framer Motion */}
+			<AnimatePresence>
+				{isOpen && (
+					<motion.div
+						initial={{ x: "100%" }}
+						animate={{ x: 0 }}
+						exit={{ x: "100%" }}
+						transition={{ duration: 0.3 }}
+						className="md:hidden bg-white shadow-lg absolute w-full left-0 top-16 py-4 z-50">
+						{menuItems.map(({ name, href, icon }) => (
+							<motion.div
+								key={name}
+								whileHover={{ scale: 1.05 }}
+								whileTap={{ scale: 0.95 }}>
+								<Link
+									href={href}
+									className="flex items-center px-6 py-3 text-black hover:text-yellow-400 transition duration-300">
+									{icon} <span className="ml-2">{name}</span>
+								</Link>
+							</motion.div>
+						))}
+					</motion.div>
+				)}
+			</AnimatePresence>
+		</motion.nav>
 	);
 };
 

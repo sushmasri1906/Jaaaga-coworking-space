@@ -9,8 +9,8 @@ function page() {
 	return (
 		<>
 			<Hero />
-			<Workspaces />
 			<Features />
+			<Workspaces />
 
 			<Testimonials />
 			<Contact />

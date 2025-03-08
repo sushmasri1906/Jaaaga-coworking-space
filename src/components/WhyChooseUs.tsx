@@ -1,3 +1,8 @@
+"use client";
+
+import { useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
 const WhyChooseUs = () => {
 	const features = [
 		{
@@ -38,27 +43,76 @@ const WhyChooseUs = () => {
 		},
 	];
 
+	const [expanded, setExpanded] = useState(false);
+	const sectionRef = useRef<HTMLDivElement>(null);
+
+	const handleToggle = () => {
+		setExpanded(!expanded);
+
+		// Scroll up to the section when collapsing
+		if (expanded && sectionRef.current) {
+			setTimeout(() => {
+				sectionRef.current?.scrollIntoView({
+					behavior: "smooth",
+					block: "start",
+				});
+			}, 300);
+		}
+	};
+
 	return (
-		<section className="py-16 text-center bg-white">
-			<div className="max-w-6xl mx-auto px-6">
-				<h2 className="text-4xl font-bold text-gray-800">Why Choose Us?</h2>
-				<p className="text-gray-800 mt-2 text-lg">
+		<section
+			ref={sectionRef}
+			className="py-16 text-center bg-cover bg-center bg-no-repeat relative"
+			style={{
+				backgroundImage:
+					"url('https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741419739/plain-yellow-background-sz8rral13llcyqn8_abhjsu.png')",
+			}}>
+			<div className="relative max-w-6xl mx-auto px-6 text-gray-800">
+				<motion.h2
+					initial={{ opacity: 0, y: -20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.5 }}
+					className="text-4xl font-bold">
+					Why Choose Us?
+				</motion.h2>
+				<motion.p
+					initial={{ opacity: 0, y: -10 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.5, delay: 0.2 }}
+					className="mt-2 text-lg">
 					Discover the benefits of working in a shared workspace.
-				</p>
+				</motion.p>
 
 				<div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-					{features.map((feature, index) => (
-						<div
-							key={index}
-							className="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
-							<div className="text-5xl">{feature.icon}</div>
-							<h3 className="mt-4 text-2xl font-semibold text-gray-800">
-								{feature.title}
-							</h3>
-							<p className="text-gray-600 mt-2">{feature.description}</p>
-						</div>
-					))}
+					<AnimatePresence>
+						{features
+							.slice(0, expanded ? features.length : 3)
+							.map((feature, index) => (
+								<motion.div
+									key={index}
+									initial={{ opacity: 0, y: 20 }}
+									animate={{ opacity: 1, y: 0 }}
+									exit={{ opacity: 0, y: -20 }}
+									transition={{ duration: 0.4 }}
+									className="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl text-gray-800">
+									<div className="text-5xl">{feature.icon}</div>
+									<h3 className="mt-4 text-2xl font-semibold">
+										{feature.title}
+									</h3>
+									<p className="text-gray-600 mt-2">{feature.description}</p>
+								</motion.div>
+							))}
+					</AnimatePresence>
 				</div>
+
+				<motion.button
+					onClick={handleToggle}
+					whileTap={{ scale: 0.95 }}
+					className="mt-8 px-6 py-3 bg-white text-yellow-500 font-semibold rounded-lg shadow-md transition-all duration-300 ease-in-out 
+               hover:bg-yellow-500 hover:text-white hover:shadow-lg">
+					{expanded ? "See Less" : "See More"}
+				</motion.button>
 			</div>
 		</section>
 	);

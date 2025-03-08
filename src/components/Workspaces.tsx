@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Workspaces = () => {
 	const [showAll, setShowAll] = useState(false);
+	const sectionRef = useRef<HTMLDivElement | null>(null);
 
 	const workspaces = [
 		{
@@ -49,9 +51,9 @@ const Workspaces = () => {
 				"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741325438/20211107_181400_dpiqgc.jpg",
 		},
 		{
-			name: "special Offer",
+			name: "Special Offer",
 			description: "Limited-time festive offer!",
-			price: "contact us for more details",
+			price: "Contact us for more details",
 			image: "/hero-bg.jpg",
 		},
 		{
@@ -77,51 +79,91 @@ const Workspaces = () => {
 		},
 	];
 
-	const visibleWorkspaces = showAll ? workspaces : workspaces.slice(0, 6);
+	const toggleShowAll = () => {
+		setShowAll((prev) => {
+			// If collapsing, scroll up to section
+			if (prev && sectionRef.current) {
+				setTimeout(() => {
+					sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+				}, 300); // Delay to allow animation completion
+			}
+			return !prev;
+		});
+	};
 
 	return (
-		<section className="py-16 bg-gray-50 text-center">
+		<motion.section
+			ref={sectionRef}
+			initial={{ opacity: 0, y: 50 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.8 }}
+			className="py-16 bg-gray-50 text-center">
 			<div className="max-w-6xl mx-auto px-6">
-				<h2 className="text-4xl font-bold text-yellow-400">
+				<motion.h2
+					initial={{ opacity: 0, y: -20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.5, delay: 0.2 }}
+					className="text-4xl font-bold text-yellow-400">
 					Available Workspaces
-				</h2>
-				<p className="text-gray-600 mt-2 text-lg">
+				</motion.h2>
+				<motion.p
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{ duration: 0.5, delay: 0.4 }}
+					className="text-gray-600 mt-2 text-lg">
 					Choose the perfect workspace for your needs.
-				</p>
+				</motion.p>
 
-				<div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-					{visibleWorkspaces.map((workspace, index) => (
-						<div
-							key={index}
-							className="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-							<div className="relative w-full h-48 rounded-lg overflow-hidden">
-								<Image
-									src={workspace.image}
-									alt={workspace.name}
-									layout="fill"
-									objectFit="cover"
-								/>
-							</div>
-							<h3 className="mt-4 text-2xl font-semibold text-gray-800">
-								{workspace.name}
-							</h3>
-							<p className="text-gray-600 mt-2">{workspace.description}</p>
-							<p className="text-yellow-500 font-bold text-lg mt-3">
-								{workspace.price}
-							</p>
-						</div>
-					))}
-				</div>
+				<motion.div
+					layout
+					className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+					<AnimatePresence>
+						{(showAll ? workspaces : workspaces.slice(0, 6)).map(
+							(workspace, index) => (
+								<motion.div
+									key={workspace.name}
+									initial={{ opacity: 0, y: 20, scale: 0.9 }}
+									animate={{ opacity: 1, y: 0, scale: 1 }}
+									exit={{ opacity: 0, y: -20, scale: 0.9 }}
+									transition={{ duration: 0.4, delay: index * 0.1 }}
+									whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+									className="bg-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:shadow-2xl">
+									<div className="relative w-full h-48 rounded-lg overflow-hidden">
+										<Image
+											src={workspace.image}
+											alt={workspace.name}
+											layout="fill"
+											objectFit="cover"
+										/>
+									</div>
+									<h3 className="mt-4 text-2xl font-semibold text-gray-800">
+										{workspace.name}
+									</h3>
+									<p className="text-gray-600 mt-2">{workspace.description}</p>
+									<p className="text-yellow-500 font-bold text-lg mt-3">
+										{workspace.price}
+									</p>
+								</motion.div>
+							)
+						)}
+					</AnimatePresence>
+				</motion.div>
 
-				<div className="mt-10">
-					<button
-						onClick={() => setShowAll(!showAll)}
-						className="px-6 py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-semibold rounded-lg shadow-md transition duration-300 hover:from-yellow-500 hover:to-yellow-600 hover:scale-105">
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.5, delay: 0.5 }}
+					className="mt-10">
+					<motion.button
+						onClick={toggleShowAll}
+						whileHover={{ scale: 1.1 }}
+						whileTap={{ scale: 0.95 }}
+						className="px-6 py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-semibold rounded-lg shadow-md transition duration-300 hover:from-yellow-500 hover:to-yellow-600">
 						{showAll ? "See Less" : "See More"}
-					</button>
-				</div>
+					</motion.button>
+				</motion.div>
 			</div>
-		</section>
+		</motion.section>
 	);
 };
 

@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { FaUserCircle, FaStar, FaRegStar } from "react-icons/fa";
 
 const testimonials = [
@@ -56,21 +59,39 @@ const Testimonials = () => {
 					"url('https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741419739/plain-yellow-background-sz8rral13llcyqn8_abhjsu.png')",
 			}}>
 			<div className="relative z-10">
-				<h2 className="text-2xl font-extrabold text-white">
+				{/* Animated Heading */}
+				<motion.h2
+					initial={{ opacity: 0, y: -20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6 }}
+					className="text-2xl font-extrabold text-white">
 					What Our Members Say
-				</h2>
-				<p className="text-gray-800 mt-2">Reviews from happy members</p>
+				</motion.h2>
+				<motion.p
+					initial={{ opacity: 0, y: -10 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6, delay: 0.2 }}
+					className="text-gray-800 mt-2">
+					Reviews from happy members
+				</motion.p>
 
 				<div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
 					{testimonials.map((testimonial, index) => (
-						<div
+						<motion.div
 							key={index}
+							initial={{ opacity: 0, y: 30 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.5, delay: index * 0.2 }}
+							whileHover={{
+								scale: 1.05,
+								boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
+							}}
 							className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center">
 							<FaUserCircle className="text-gray-400 text-6xl" />
 							<h3 className="mt-4 text-lg font-semibold">{testimonial.name}</h3>
 							{renderStars(testimonial.rating)}
 							<p className="text-gray-600 mt-2 italic">{testimonial.review}</p>
-						</div>
+						</motion.div>
 					))}
 				</div>
 			</div>

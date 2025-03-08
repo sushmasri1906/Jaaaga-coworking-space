@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import {
 	FaMapMarkerAlt,
 	FaPhoneAlt,
@@ -30,15 +31,30 @@ const Contact = () => {
 	return (
 		<section className="py-16 bg-white">
 			<div className="max-w-4xl mx-auto px-6">
-				<h2 className="text-3xl font-bold text-center text-gray-800">
+				<motion.h2
+					initial={{ opacity: 0, y: -20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6 }}
+					viewport={{ once: true }}
+					className="text-3xl font-bold text-center text-gray-800">
 					Contact Us
-				</h2>
-				<p className="text-center text-gray-800 mt-2">
+				</motion.h2>
+				<motion.p
+					initial={{ opacity: 0, y: -10 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6, delay: 0.2 }}
+					viewport={{ once: true }}
+					className="text-center text-gray-800 mt-2">
 					We&apos;d love to hear from you!
-				</p>
+				</motion.p>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-					<div className="bg-white p-6 rounded-lg shadow-lg border border-yellow-400">
+					<motion.div
+						initial={{ opacity: 0, y: 30 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.5 }}
+						viewport={{ once: true }}
+						className="bg-white p-6 rounded-lg shadow-lg border border-yellow-400">
 						<h3 className="text-xl font-semibold text-gray-800">
 							Our Location
 						</h3>
@@ -74,9 +90,14 @@ const Contact = () => {
 								</Link>
 							</p>
 						</div>
-					</div>
+					</motion.div>
 
-					<div className="bg-white p-6 rounded-lg shadow-lg border border-yellow-400">
+					<motion.div
+						initial={{ opacity: 0, y: 30 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.5, delay: 0.2 }}
+						viewport={{ once: true }}
+						className="bg-white p-6 rounded-lg shadow-lg border border-yellow-400">
 						<h3 className="text-xl font-semibold text-gray-800">
 							Send Us a Message
 						</h3>
@@ -113,7 +134,7 @@ const Contact = () => {
 								Send Message
 							</button>
 						</form>
-					</div>
+					</motion.div>
 				</div>
 			</div>
 		</section>
