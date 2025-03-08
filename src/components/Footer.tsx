@@ -16,7 +16,9 @@ const Footer = () => {
 				initial={{ scale: 0.8, opacity: 0 }}
 				animate={{ scale: 1, opacity: 1 }}
 				transition={{ duration: 0.6, ease: "easeOut" }}
-				className="absolute -top-24 left-1/2 transform -translate-x-1/2 w-[90%] max-w-3xl bg-yellow-400 text-center py-6 rounded-2xl shadow-xl px-6 md:px-12">
+				whileHover={{ scale: 1.05, y: -5 }}
+				whileTap={{ scale: 0.95 }}
+				className="absolute -top-24 left-1/2 transform -translate-x-1/2 w-[90%] max-w-3xl bg-yellow-400 text-center py-6 rounded-2xl shadow-xl px-6 md:px-12 cursor-pointer">
 				<h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
 					Ready to Elevate Your Work at{" "}
 					<span className="text-white">Jaaaga Coworking Space?</span>
@@ -24,7 +26,7 @@ const Footer = () => {
 
 				<Link href="/contact">
 					<motion.button
-						whileHover={{ scale: 1.05 }}
+						whileHover={{ scale: 1.1 }}
 						whileTap={{ scale: 0.95 }}
 						className="bg-white text-gray-900 font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 hover:bg-gray-200">
 						Join Now
