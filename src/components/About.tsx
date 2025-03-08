@@ -1,12 +1,32 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+// import Founders from "./Founders";
 
 const About = () => {
 	return (
-		<section className="py-20 bg-gray-50 text-gray-900">
-			<div className="max-w-7xl mx-auto px-6 lg:px-12">
+		<section className="bg-gray-50 text-gray-900">
+			{/* Hero Section */}
+			<div className="relative w-full h-[400px] flex items-center justify-center text-center">
+				{/* Background Image */}
+				<Image
+					src="https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741419739/plain-yellow-background-sz8rral13llcyqn8_abhjsu.png"
+					alt="Jaaaga Coworking Space"
+					fill
+					className="object-cover brightness-75"
+					priority
+				/>
+
+				{/* Heading Text */}
+				<h1 className="absolute text-white text-4xl md:text-5xl font-bold drop-shadow-lg">
+					About Us
+				</h1>
+			</div>
+
+			{/* About Content */}
+			<div className="max-w-7xl mx-auto px-6 lg:px-12 py-20">
 				<h2 className="text-4xl md:text-5xl font-bold text-center text-yellow-400">
-					About Jaaaga Coworking Space
+					Jaaaga Coworking Space
 				</h2>
 				<p className="text-center text-lg mt-4 text-gray-700 max-w-3xl mx-auto">
 					A vibrant coworking space in Hyderabad designed for professionals,
@@ -14,6 +34,7 @@ const About = () => {
 					collaborative environment.
 				</p>
 
+				{/* Features Section */}
 				<div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-10">
 					<div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-yellow-400 transition-all duration-300 hover:shadow-2xl">
 						<h3 className="text-2xl font-semibold text-gray-900">
@@ -67,6 +88,7 @@ const About = () => {
 					</div>
 				</div>
 
+				{/* Call to Action */}
 				<div className="text-center mt-12">
 					<Link
 						href="/contact"
@@ -74,6 +96,11 @@ const About = () => {
 						Get in Touch
 					</Link>
 				</div>
+
+				{/* Founders Section */}
+				{/* <div className="mt-12">
+					<Founders />
+				</div> */}
 			</div>
 		</section>
 	);
