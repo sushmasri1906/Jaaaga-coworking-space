@@ -18,7 +18,7 @@ const Footer = () => {
 				</Link>
 			</div>
 
-			<div className="container mx-auto px-6 sm:px-8 md:px-12 mt-28">
+			<div className="container mx-auto px-6 sm:px-8 md:px-12 mt-24">
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-10">
 					{/* About Section */}
 					<div>
@@ -72,7 +72,7 @@ const Footer = () => {
 								className="text-yellow-400 hover:underline ml-1">
 								+91 9160666681
 							</Link>
-							<span className="ml-2 text-gray-400">| Manager: John Doe</span>
+							<span className="ml-2 text-gray-400">| Manager:Rajesh</span>
 						</p>
 					</div>
 				</div>
@@ -83,7 +83,7 @@ const Footer = () => {
 						&copy; {new Date().getFullYear()} Jaaaga Coworking Space. All Rights
 						Reserved.
 					</p>
-					<div className="flex space-x-6 mt-3 md:mt-0">
+					<div className="flex space-x-6 m-3 md:mt-0">
 						{["Facebook", "Twitter", "LinkedIn", "Instagram"].map(
 							(platform, index) => (
 								<Link
