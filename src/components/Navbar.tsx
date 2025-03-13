@@ -30,7 +30,7 @@ const Navbar = () => {
 			className="bg-white fixed w-full top-0 z-50 shadow-md">
 			<div className="container mx-auto px-6 py-4 flex justify-between items-center">
 				<Link href="/">
-					<span className="text-2xl font-bold text-yellow-400 cursor-pointer">
+					<span className="text-2xl font-bold text-red-600 cursor-pointer">
 						Jaaaga <span className="text-black">Coworking Space</span>
 					</span>
 				</Link>
