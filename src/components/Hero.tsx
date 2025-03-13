@@ -28,8 +28,7 @@ const Hero = () => {
 					animate={{ y: 0, opacity: 1 }}
 					transition={{ delay: 0.3, duration: 1, ease: "easeOut" }}
 					className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
-					Welcome to{" "}
-					<span className="text-yellow-500">Jaaaga Coworking Space</span>
+					Welcome to <span className="text-black">Jaaaga Coworking Space</span>
 				</motion.h1>
 
 				<motion.p
@@ -37,8 +36,8 @@ const Hero = () => {
 					animate={{ y: 0, opacity: 1 }}
 					transition={{ delay: 0.6, duration: 1, ease: "easeOut" }}
 					className="mt-4 text-lg md:text-xl font-medium text-gray-200">
-					A premium coworking space designed for freelancers, startups, and
-					businesses to thrive.
+					A budget-friendly coworking space designed to support freelancers,
+					startups, and businesses while keeping costs low.
 				</motion.p>
 
 				<motion.div

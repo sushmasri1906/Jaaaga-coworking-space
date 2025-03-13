@@ -66,7 +66,7 @@ const WhyChooseUs = () => {
 			className="py-16 text-center bg-cover bg-center bg-no-repeat relative"
 			style={{
 				backgroundImage:
-					"url('https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741419739/plain-yellow-background-sz8rral13llcyqn8_abhjsu.png')",
+					"url('https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741857657/WhatsApp_Image_2025-03-13_at_14.50.15_9d945515_r33ufg.jpg')",
 			}}>
 			<div className="relative max-w-6xl mx-auto px-6 text-gray-800">
 				<motion.h2

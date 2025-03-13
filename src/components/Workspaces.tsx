@@ -12,68 +12,68 @@ const Workspaces = () => {
 		{
 			name: "Private Workspace",
 			description: "8 seats workspace with AC & MD Cabin.",
-			price: "₹28,000.00",
+			price: "contact us",
 			image:
 				"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741324467/12_Seats_Ac_8_elk5ff.jpg",
 		},
 		{
 			name: "12 Seats Workspace",
 			description: "Spacious & comfortable 12-seat coworking area.",
-			price: "₹36,000.00",
+			price: "contact us",
 			image:
 				"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741324130/12_Seats_Ac_2_klksqn.jpg",
 		},
 		{
 			name: "23 Seats Workspace",
 			description: "Air-conditioned workspace for 23 people.",
-			price: "₹69,000.00",
+			price: "contact us",
 			image: "/hero-bg.jpg",
 		},
 		{
 			name: "30 Seats Office",
 			description: "Fully equipped office space in Ameerpet.",
-			price: "₹90,000.00",
+			price: "contact us",
 			image:
 				"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741325269/12_Seats_Ac_8_oyee8q.jpg",
 		},
 		{
 			name: "7 Seats Workspace",
 			description: "AC workspace with MD Cabin for 7 people.",
-			price: "₹35,000.00",
+			price: "contact us",
 			image:
 				"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741325344/12_Seats_Ac_7_aa2eqj.jpg",
 		},
 		{
 			name: "Manager Cabin AC",
 			description: "Private AC cabin for managers.",
-			price: "₹12,000.00",
+			price: "contact us",
 			image:
 				"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741325438/20211107_181400_dpiqgc.jpg",
 		},
 		{
 			name: "Special Offer",
 			description: "Limited-time festive offer!",
-			price: "Contact us for more details",
+			price: "Contact us",
 			image: "/hero-bg.jpg",
 		},
 		{
 			name: "12 Seat Soundproof Workspace",
 			description: "Noise-free coworking space for 12 people.",
-			price: "₹30,000.00",
+			price: "contact us",
 			image:
 				"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741325581/12_Seats_Ac_9_aend5e.jpg",
 		},
 		{
 			name: "8 Seat Soundproof Workspace",
 			description: "Acoustically treated space for focus & productivity.",
-			price: "₹24,000.00",
+			price: "contact us",
 			image:
 				"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741325699/7_Seater_AC_with_Marker_01_g0lyze.jpg",
 		},
 		{
 			name: "5 Seats Non-AC Workspace",
 			description: "Budget-friendly workspace for 5 people.",
-			price: "₹15,000.00",
+			price: "contact us",
 			image:
 				"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741325750/5_Seats_With_Marker_Non-Ac_06_kmbtaf.jpg",
 		},
@@ -85,7 +85,7 @@ const Workspaces = () => {
 			if (prev && sectionRef.current) {
 				setTimeout(() => {
 					sectionRef.current?.scrollIntoView({ behavior: "smooth" });
-				}, 300); // Delay to allow animation completion
+				}, 200); // Delay to allow animation completion
 			}
 			return !prev;
 		});

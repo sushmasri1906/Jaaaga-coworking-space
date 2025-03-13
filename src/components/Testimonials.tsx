@@ -56,10 +56,9 @@ const Testimonials = () => {
 			className="relative py-16 text-center bg-cover bg-center"
 			style={{
 				backgroundImage:
-					"url('https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741419739/plain-yellow-background-sz8rral13llcyqn8_abhjsu.png')",
+					"url('https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741857657/WhatsApp_Image_2025-03-13_at_14.50.15_9d945515_r33ufg.jpg')",
 			}}>
 			<div className="relative z-10">
-				
 				<motion.h2
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}

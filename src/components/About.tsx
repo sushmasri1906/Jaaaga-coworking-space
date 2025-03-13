@@ -24,7 +24,7 @@ const About = () => {
 					className="object-cover brightness-75"
 					priority
 				/>
-				<h1 className="absolute text-white text-4xl md:text-5xl font-bold drop-shadow-lg">
+				<h1 className="absolute text-black text-4xl md:text-5xl font-bold drop-shadow-lg">
 					About Us
 				</h1>
 			</motion.div>
@@ -38,7 +38,7 @@ const About = () => {
 					initial={{ opacity: 0, scale: 0.8 }}
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{ duration: 1, delay: 0.2 }}
-					className="text-4xl md:text-5xl font-bold text-center text-yellow-400">
+					className="text-4xl md:text-5xl font-bold text-center text-black">
 					Jaaaga Coworking Space
 				</motion.h2>
 				<motion.p
