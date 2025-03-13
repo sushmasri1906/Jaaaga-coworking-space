@@ -30,7 +30,6 @@ const Contact = () => {
 
 	return (
 		<section className="relative py-16 bg-white overflow-hidden">
-			{/* Raindrop Effect (Covers entire section) */}
 
 			{/* Content Wrapper */}
 			<div className="relative z-10 max-w-4xl mx-auto px-6">

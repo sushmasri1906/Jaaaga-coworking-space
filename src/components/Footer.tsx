@@ -23,7 +23,6 @@ const Footer = () => {
 					Ready to Elevate Your Work at{" "}
 					<span className="text-white">Jaaaga Coworking Space?</span>
 				</h2>
-
 				<Link href="/contact">
 					<motion.button
 						whileHover={{ scale: 1.05 }}
@@ -34,8 +33,10 @@ const Footer = () => {
 				</Link>
 			</motion.div>
 
+			{/* Footer Content */}
 			<div className="container mx-auto px-6 sm:px-8 md:px-12 mt-24">
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+					{/* About Section */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
@@ -49,6 +50,7 @@ const Footer = () => {
 						</p>
 					</motion.div>
 
+					{/* Quick Links Section */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
@@ -78,6 +80,7 @@ const Footer = () => {
 						</ul>
 					</motion.div>
 
+					{/* Contact Section */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
@@ -85,39 +88,46 @@ const Footer = () => {
 						<h3 className="text-xl font-semibold text-yellow-400">Contact</h3>
 						<p className="text-gray-400 mt-2 text-sm leading-relaxed">
 							📍 Hyderabad, India
-							<br />
-							📞 +91 98765 43210
-							<br />
-							✉️ info@jaaaga.com
+							<br /> 📞 +91 98765 43210
+							<br /> ✉️ info@jaaaga.com
 						</p>
 					</motion.div>
 				</div>
 
+				{/* Footer Bottom */}
 				<div className="border-t border-gray-700 mt-10 pt-5 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
 					<p>
 						&copy; {new Date().getFullYear()} Jaaaga Coworking Space. All Rights
 						Reserved.
 					</p>
 					<div className="flex space-x-6 m-3 md:mt-0">
-						{[
-							{ name: "Facebook", link: "#", aria: "Facebook Page" },
-							{ name: "Twitter", link: "#", aria: "Twitter Profile" },
-							{ name: "LinkedIn", link: "#", aria: "LinkedIn Page" },
-							{ name: "Instagram", link: "#", aria: "Instagram Profile" },
-						].map((social, index) => (
-							<motion.div
-								key={index}
-								whileHover={{ scale: 1.1 }}
-								whileTap={{ scale: 0.9 }}>
-								<Link
-									href={social.link}
-									aria-label={social.aria}
-									className="hover:text-yellow-400 transition">
-									{social.name}
-								</Link>
-							</motion.div>
-						))}
+						{["Facebook", "Twitter", "LinkedIn", "Instagram"].map(
+							(name, index) => (
+								<motion.div
+									key={index}
+									whileHover={{ scale: 1.1 }}
+									whileTap={{ scale: 0.9 }}>
+									<Link
+										href="#"
+										aria-label={`${name} Page`}
+										className="hover:text-yellow-400 transition">
+										{name}
+									</Link>
+								</motion.div>
+							)
+						)}
 					</div>
+				</div>
+
+				{/* Developed by HSDev.in */}
+				<div className="text-center text-gray-500 text-sm mt-4 pb-6">
+					Developed by{" "}
+					<Link
+						href="https://hsdev.in"
+						target="_blank"
+						className="text-yellow-400 hover:underline">
+						hsdev.in
+					</Link>
 				</div>
 			</div>
 		</motion.footer>
