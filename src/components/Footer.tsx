@@ -42,8 +42,8 @@ const Footer = () => {
 							Jaaaga Coworking Space
 						</h3>
 						<p className="text-white mt-2 text-sm leading-relaxed">
-							A premium coworking space in Hyderabad designed for startups,
-							freelancers, and professionals.
+							A budget-friendly coworking space in Hyderabad designed for
+							startups, freelancers, and professionals.
 						</p>
 					</motion.div>
 
