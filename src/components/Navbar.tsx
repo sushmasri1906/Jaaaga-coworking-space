@@ -3,23 +3,16 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-	FaBars,
-	FaTimes,
-	FaHome,
-	FaUsers,
-	FaBuilding,
-	FaEnvelope,
-} from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const menuItems = [
-		{ name: "Home", href: "/", icon: <FaHome /> },
-		{ name: "About", href: "/about", icon: <FaUsers /> },
-		{ name: "WorkSpaces", href: "/spaces", icon: <FaBuilding /> },
-		{ name: "Contact", href: "/contact", icon: <FaEnvelope /> },
+		{ name: "Home", href: "/" },
+		{ name: "About", href: "/about" },
+		{ name: "Support Services", href: "/services" },
+		{ name: "Contact", href: "/contact" },
 	];
 
 	return (
@@ -36,15 +29,15 @@ const Navbar = () => {
 				</Link>
 
 				<div className="hidden md:flex space-x-6 items-center">
-					{menuItems.map(({ name, href, icon }) => (
+					{menuItems.map(({ name, href }) => (
 						<motion.div
 							key={name}
 							whileHover={{ scale: 1.1 }}
 							whileTap={{ scale: 0.9 }}>
 							<Link
 								href={href}
-								className="flex items-center space-x-2 text-black hover:text-yellow-400 transition duration-300">
-								{icon} <span>{name}</span>
+								className="text-black hover:text-yellow-400 transition duration-300">
+								{name}
 							</Link>
 						</motion.div>
 					))}
@@ -66,15 +59,15 @@ const Navbar = () => {
 						exit={{ x: "100%" }}
 						transition={{ duration: 0.3 }}
 						className="md:hidden bg-white shadow-lg absolute w-full left-0 top-16 py-4 z-50">
-						{menuItems.map(({ name, href, icon }) => (
+						{menuItems.map(({ name, href }) => (
 							<motion.div
 								key={name}
 								whileHover={{ scale: 1.05 }}
 								whileTap={{ scale: 0.95 }}>
 								<Link
 									href={href}
-									className="flex items-center px-6 py-3 text-black hover:text-yellow-400 transition duration-300">
-									{icon} <span className="ml-2">{name}</span>
+									className="block px-6 py-3 text-black hover:text-yellow-400 transition duration-300">
+									{name}
 								</Link>
 							</motion.div>
 						))}
