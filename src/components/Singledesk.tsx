@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function SingleDesk() {
@@ -8,7 +9,7 @@ export default function SingleDesk() {
 		<section className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between bg-white p-30">
 			<div className="md:w-1/2 text-center md:text-left space-y-4">
 				<motion.h2
-					className="text-7xl font-bold text-gray-800"
+					className="text-6xl font-bold text-gray-800"
 					initial={{ opacity: 0, y: -10 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5 }}>
@@ -20,12 +21,13 @@ export default function SingleDesk() {
 					₹2999<span className="text-2xl">/month</span>
 				</h1>
 				<p>Includes all ammenities</p>
-				<motion.a
-					href="/contact"
-					className="inline-block bg-yellow-400 text-black py-2 px-6 rounded-full hover:bg-yellow-500 transition"
-					whileHover={{ scale: 1.05 }}>
-					Book Your Desk Now
-				</motion.a>
+				<motion.div whileHover={{ scale: 1.05 }}>
+					<Link
+						href="/contact"
+						className="inline-block bg-yellow-400 text-black py-2 px-6 rounded-full hover:bg-yellow-500 transition">
+						Book Your Desk Now
+					</Link>
+				</motion.div>
 			</div>
 
 			<motion.div
