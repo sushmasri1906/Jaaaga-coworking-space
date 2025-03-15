@@ -1,10 +1,10 @@
 import Features from "@/components/WhyChooseUs";
 import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
-import Workspaces from "@/components/Workspaces";
 import React from "react";
 import Contact from "@/components/Contact";
 import SingleDesk from "@/components/Singledesk";
+import Gallery from "@/components/Gallery";
 
 function page() {
 	return (
@@ -12,7 +12,7 @@ function page() {
 			<Hero />
 			<Features />
 			<SingleDesk />
-			<Workspaces />
+			<Gallery />
 
 			<Testimonials />
 			<Contact />
