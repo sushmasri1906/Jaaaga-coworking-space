@@ -27,16 +27,14 @@ const Gallery = () => {
 
 	return (
 		<div className="min-h-screen flex flex-col justify-center items-center p-1 bg-white">
-			{/* Main Heading */}
 			<motion.h1
-				className="text-5xl md:text-6xl font-bold text-gray-800 mb-8"
+				className="text-5xl md:text-6xl font-bold text-black mb-8"
 				initial={{ opacity: 0, y: -20 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.5 }}>
 				Gallery
 			</motion.h1>
 
-			{/* Gallery Grid */}
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1 w-full max-w-8xl">
 				{images.map((src, index) => (
 					<motion.div

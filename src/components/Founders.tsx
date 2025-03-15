@@ -26,8 +26,8 @@ const founders = [
 const Founders = () => {
 	return (
 		<section className="py-16 bg-white text-center">
-			<h2 className="text-4xl font-bold text-gray-900">Meet Our Founders</h2>
-			<p className="text-gray-600 mt-2">Visionaries behind our success</p>
+			<h2 className="text-4xl font-bold text-black">Meet Our Founders</h2>
+			<p className="text-black mt-2">Visionaries behind our success</p>
 
 			<div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
 				{founders.map((founder, index) => (
@@ -43,10 +43,10 @@ const Founders = () => {
 							/>
 						</div>
 
-						<h3 className="mt-4 text-xl font-semibold text-gray-900">
+						<h3 className="mt-4 text-xl font-semibold text-black">
 							{founder.name}
 						</h3>
-						<p className="text-gray-800 font-medium">{founder.designation}</p>
+						<p className="text-black font-medium">{founder.designation}</p>
 					</div>
 				))}
 			</div>

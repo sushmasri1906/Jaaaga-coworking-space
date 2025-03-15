@@ -10,8 +10,7 @@ const Footer = () => {
 			initial={{ opacity: 0, y: 50 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.8, ease: "easeOut" }}
-			className="bg-gray-900 text-white pt-11 relative mt-20">
-			{/* CTA Box */}
+			className="bg-black text-black pt-11 relative mt-20">
 			<motion.div
 				initial={{ scale: 0.8, opacity: 0 }}
 				animate={{ scale: 1, opacity: 1 }}
@@ -27,16 +26,14 @@ const Footer = () => {
 					<motion.button
 						whileHover={{ scale: 1.05 }}
 						whileTap={{ scale: 0.97 }}
-						className="bg-white text-gray-900 font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 hover:bg-gray-200">
+						className="bg-white text-black font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 hover:bg-gray-200">
 						Join Now
 					</motion.button>
 				</Link>
 			</motion.div>
 
-			{/* Footer Content */}
 			<div className="container mx-auto px-6 sm:px-8 md:px-12 mt-24">
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-					{/* About Section */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
@@ -44,13 +41,12 @@ const Footer = () => {
 						<h3 className="text-xl font-semibold text-yellow-400">
 							Jaaaga Coworking Space
 						</h3>
-						<p className="text-gray-400 mt-2 text-sm leading-relaxed">
+						<p className="text-white mt-2 text-sm leading-relaxed">
 							A premium coworking space in Hyderabad designed for startups,
 							freelancers, and professionals.
 						</p>
 					</motion.div>
 
-					{/* Quick Links Section */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
@@ -58,7 +54,7 @@ const Footer = () => {
 						<h3 className="text-xl font-semibold text-yellow-400">
 							Quick Links
 						</h3>
-						<ul className="mt-3 space-y-2 text-gray-400 text-sm">
+						<ul className="mt-3 space-y-2 text-white text-sm">
 							{[
 								{ name: "About Us", path: "/about" },
 								{ name: "Location", path: "/contact" },
@@ -80,13 +76,12 @@ const Footer = () => {
 						</ul>
 					</motion.div>
 
-					{/* Contact Section */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8, delay: 0.6 }}>
 						<h3 className="text-xl font-semibold text-yellow-400">Contact</h3>
-						<p className="text-gray-400 mt-2 text-sm leading-relaxed">
+						<p className="text-white mt-2 text-sm leading-relaxed">
 							📍 Hyderabad, India
 							<br /> 📞 +91 91606 66681
 							<br /> ✉️ info@jaaaga.com
@@ -94,8 +89,7 @@ const Footer = () => {
 					</motion.div>
 				</div>
 
-				{/* Footer Bottom */}
-				<div className="border-t border-gray-700 mt-10 pt-5 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
+				<div className="border-t border-white mt-10 pt-5 flex flex-col md:flex-row items-center justify-between text-sm text-white">
 					<p>
 						&copy; {new Date().getFullYear()} Jaaaga Coworking Space. All Rights
 						Reserved.
@@ -119,8 +113,7 @@ const Footer = () => {
 					</div>
 				</div>
 
-				{/* Developed by HSDev.in */}
-				<div className="text-center text-gray-500 text-sm mt-4 pb-6">
+				<div className="text-center text-white text-sm mt-4 pb-6">
 					Developed by{" "}
 					<Link
 						href="https://hsdev.in"

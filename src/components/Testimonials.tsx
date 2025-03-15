@@ -204,7 +204,7 @@ const renderStars = (rating: number) => {
 				index < rating ? (
 					<FaStar key={index} className="text-yellow-500 text-lg" />
 				) : (
-					<FaRegStar key={index} className="text-gray-300 text-lg" />
+					<FaRegStar key={index} className="text-black text-lg" />
 				)
 			)}
 		</div>
@@ -237,11 +237,11 @@ const Testimonials = () => {
 							transition={{ duration: 0.4, delay: index * 0.1 }}
 							whileHover={{ scale: 1.02 }}
 							className="bg-white p-4 rounded-md shadow-md text-left">
-							<h3 className="text-sm font-semibold text-gray-800">
+							<h3 className="text-sm font-semibold text-black">
 								{testimonial.name}
 							</h3>
 							{renderStars(testimonial.rating)}
-							<p className="text-xs text-gray-600 mt-1">{testimonial.review}</p>
+							<p className="text-xs text-black mt-1">{testimonial.review}</p>
 						</motion.div>
 					))}
 				</div>

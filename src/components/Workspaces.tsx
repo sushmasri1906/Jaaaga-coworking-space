@@ -138,7 +138,7 @@ const Workspaces = () => {
 												objectFit="cover"
 											/>
 										</div>
-										<h3 className="mt-4 text-2xl font-semibold text-gray-800">
+										<h3 className="mt-4 text-2xl font-semibold text-black">
 											{workspace.name}
 										</h3>
 										<p className="text-gray-600 mt-2">

@@ -49,7 +49,7 @@ const WhyChooseUs = () => {
 	const handleToggle = () => {
 		setExpanded(!expanded);
 
-		// Scroll up to the section when collapsing
+		
 		if (expanded && sectionRef.current) {
 			setTimeout(() => {
 				sectionRef.current?.scrollIntoView({
@@ -68,7 +68,7 @@ const WhyChooseUs = () => {
 				backgroundImage:
 					"url('https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741857657/WhatsApp_Image_2025-03-13_at_14.50.15_9d945515_r33ufg.jpg')",
 			}}>
-			<div className="relative max-w-6xl mx-auto px-6 text-gray-800">
+			<div className="relative max-w-6xl mx-auto px-6 text-black">
 				<motion.h2
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ const WhyChooseUs = () => {
 									<h3 className="mt-4 text-2xl font-semibold">
 										{feature.title}
 									</h3>
-									<p className="text-gray-600 mt-2">{feature.description}</p>
+									<p className="text-black mt-2">{feature.description}</p>
 								</motion.div>
 							))}
 					</AnimatePresence>

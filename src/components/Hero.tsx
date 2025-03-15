@@ -22,7 +22,6 @@ const Hero = () => {
 				initial={{ y: 50, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ duration: 1, ease: "easeOut" }}
-				// className="relative z-10 max-w-3xl px-6 bg-white/10 backdrop-blur-md rounded-xl p-10 shadow-lg">
 				className="relative z-10 max-w-3xl px-6 bg-red-600 backdrop-blur-2xl rounded-xl p-10 shadow-2xl opacity-10 ">
 				<motion.h1
 					initial={{ y: 20, opacity: 0 }}
