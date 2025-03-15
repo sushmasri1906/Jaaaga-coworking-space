@@ -26,7 +26,7 @@ const Gallery = () => {
 	const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
 	return (
-		<div className="min-h-screen flex flex-col justify-center items-center p-6 bg-white">
+		<div className="min-h-screen flex flex-col justify-center items-center p-1 bg-white">
 			{/* Main Heading */}
 			<motion.h1
 				className="text-5xl md:text-6xl font-bold text-gray-800 mb-8"
@@ -69,9 +69,9 @@ const Gallery = () => {
 						<Image
 							src={selectedImage}
 							alt="Selected"
-							width={1200}
+							width={2000}
 							height={1600}
-							className="w-full h-auto max-w-4xl max-h-screen object-contain "
+							className="w-full h-auto max-w-8xl max-h-screen object-fit "
 						/>
 					</motion.div>
 				</div>
