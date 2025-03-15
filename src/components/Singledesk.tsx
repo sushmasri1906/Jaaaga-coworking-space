@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function SingleDesk() {
 	return (
-		<section className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between bg-white  m-30">
+		<section className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between bg-white p-30">
 			<div className="md:w-1/2 text-center md:text-left space-y-4">
 				<motion.h2
 					className="text-7xl font-bold text-gray-800"
