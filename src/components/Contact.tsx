@@ -73,9 +73,7 @@ const Contact = () => {
 							<p className="flex items-center text-black">
 								<FaPhoneAlt className="text-yellow-400 mr-2" />
 								<strong>Phone:</strong>
-								<Link
-									href="tel:+919160666681"
-									className="text-black hover:underline">
+								<Link href="tel:+919160666681" className="text-black ">
 									+91 91606 66681
 								</Link>
 							</p>
@@ -84,7 +82,7 @@ const Contact = () => {
 								<strong>Email:</strong>
 								<Link
 									href="mailto:officetoletinfo@gmail.com"
-									className="text-black hover:underline">
+									className="text-black ">
 									officetoletinfo@gmail.com
 								</Link>
 							</p>

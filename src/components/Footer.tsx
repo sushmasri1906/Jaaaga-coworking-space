@@ -83,8 +83,14 @@ const Footer = () => {
 						<h3 className="text-xl font-semibold text-yellow-400">Contact</h3>
 						<p className="text-white mt-2 text-sm leading-relaxed">
 							📍 Hyderabad, India
-							<br /> 📞 +91 91606 66681
-							<br /> ✉️ info@jaaaga.com
+							<br />
+							<Link href="tel:+919160666681" className="text-yellow-300 ">
+								📞 +91 91606 66681
+							</Link>
+							<br />
+							<Link href="mailto:info@jaaaga.com" className="text-yellow-300 ">
+								✉️ info@jaaaga.com
+							</Link>
 						</p>
 					</motion.div>
 				</div>
