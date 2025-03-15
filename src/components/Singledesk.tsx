@@ -5,40 +5,24 @@ import { motion } from "framer-motion";
 
 export default function SingleDesk() {
 	return (
-		<section className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between  m-30">
+		<section className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between bg-white  m-30">
 			<div className="md:w-1/2 text-center md:text-left space-y-4">
 				<motion.h2
 					className="text-7xl font-bold text-gray-800"
 					initial={{ opacity: 0, y: -10 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5 }}>
-					 Rent <span className="text-red-600">a</span> Desk
+					Rent <span className="text-red-600">a</span> Desk
 				</motion.h2>
-				{/* <p className="text-gray-600">
-					A quiet, focused space designed for your productivity.
-				</p>
-				<ul className="text-gray-700 space-y-2">
-					<li>
-						✅ <strong>Ergonomic setup</strong> – Comfortable chair & spacious
-						desk
-					</li>
-					<li>
-						✅ <strong>High-speed WiFi & power outlets</strong>
-					</li>
-					<li>
-						✅ <strong>Access to shared amenities</strong> – Pantry, lounge &
-						meeting rooms
-					</li>
-					<li>
-						✅ <strong>Free coffee & tea</strong> – Fuel your work sessions
-					</li>
-				</ul> */}
-				<h2 className="text-lg font-semibold text-gray-800 mt-2">
-					💰 ₹2999/month
-				</h2>
+
+				<h1 className="text-5xl text-gray-800 mt-10">
+					{" "}
+					₹2999<span className="text-2xl">/month</span>
+				</h1>
+				<p>Includes all ammenities</p>
 				<motion.a
 					href="/contact"
-					className="inline-block bg-yellow-400 text-white py-2 px-6 rounded-full mt-4 hover:bg-yellow-500 transition"
+					className="inline-block bg-yellow-400 text-black py-2 px-6 rounded-full hover:bg-yellow-500 transition"
 					whileHover={{ scale: 1.05 }}>
 					Book Your Desk Now
 				</motion.a>
