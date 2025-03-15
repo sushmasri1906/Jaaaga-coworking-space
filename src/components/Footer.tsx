@@ -58,7 +58,7 @@ const Footer = () => {
 							{[
 								{ name: "About Us", path: "/about" },
 								{ name: "Location", path: "/contact" },
-								{ name: "Workspace", path: "/spaces" },
+								{ name: "Support Services", path: "/services" },
 								{ name: "Contact Us", path: "/contact" },
 							].map((link, index) => (
 								<motion.li
