@@ -19,9 +19,9 @@ const Footer = () => {
 				whileTap={{ scale: 0.98 }}
 				transition={{ duration: 0.6, ease: "easeOut" }}
 				className="absolute -top-24 left-1/2 transform -translate-x-1/2 w-[90%] max-w-3xl bg-yellow-400 text-center py-6 rounded-2xl shadow-xl px-6 md:px-12">
-				<h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
-					Ready to Elevate Your Work at{" "}
-					<span className="text-white">Jaaaga Coworking Space?</span>
+				<h2 className="text-2xl md:text-3xl font-bold mb-4 text-red-600">
+					Gain Office Culture at{" "}
+					<h2 className="text-black mt-1">Jaaaga Coworking Space?</h2>
 				</h2>
 				<Link href="/contact">
 					<motion.button
@@ -88,7 +88,7 @@ const Footer = () => {
 						<h3 className="text-xl font-semibold text-yellow-400">Contact</h3>
 						<p className="text-gray-400 mt-2 text-sm leading-relaxed">
 							📍 Hyderabad, India
-							<br /> 📞 +91 98765 43210
+							<br /> 📞 +91 91606 66681
 							<br /> ✉️ info@jaaaga.com
 						</p>
 					</motion.div>
