@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+// import { useState } from "react";
 import { motion } from "framer-motion";
 import {
 	FaMapMarkerAlt,
@@ -12,22 +12,22 @@ import {
 import Link from "next/link";
 
 const Contact = () => {
-	const [formData, setFormData] = useState({
-		name: "",
-		email: "",
-		message: "",
-	});
+	// const [formData, setFormData] = useState({
+	// 	name: "",
+	// 	email: "",
+	// 	message: "",
+	// });
 
-	const handleChange = (
-		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-	) => {
-		setFormData({ ...formData, [e.target.name]: e.target.value });
-	};
+	// const handleChange = (
+	// 	e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+	// ) => {
+	// 	setFormData({ ...formData, [e.target.name]: e.target.value });
+	// };
 
-	const handleSubmit = (e: React.FormEvent) => {
-		e.preventDefault();
-		alert("Form submitted successfully!");
-	};
+	// const handleSubmit = (e: React.FormEvent) => {
+	// 	e.preventDefault();
+	// 	alert("Form submitted successfully!");
+	// };
 
 	return (
 		<section className="py-20 bg-white">
