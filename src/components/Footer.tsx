@@ -10,29 +10,8 @@ const Footer = () => {
 			initial={{ opacity: 0, y: 50 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.8, ease: "easeOut" }}
-			className="bg-black text-black pt-11 relative mt-20">
-			<motion.div
-				initial={{ scale: 0.8, opacity: 0 }}
-				animate={{ scale: 1, opacity: 1 }}
-				whileHover={{ scale: 1.02 }}
-				whileTap={{ scale: 0.98 }}
-				transition={{ duration: 0.6, ease: "easeOut" }}
-				className="absolute -top-24 left-1/2 transform -translate-x-1/2 w-[90%] max-w-3xl bg-yellow-400 text-center py-6 rounded-2xl shadow-xl px-6 md:px-12">
-				<h2 className="text-2xl md:text-3xl font-bold mb-4 text-red-600">
-					Gain Office Culture at{" "}
-					<h2 className="text-black mt-1">Jaaaga Coworking Space?</h2>
-				</h2>
-				<Link href="/contact">
-					<motion.button
-						whileHover={{ scale: 1.05 }}
-						whileTap={{ scale: 0.97 }}
-						className="bg-white text-black font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 hover:bg-gray-200">
-						Join Now
-					</motion.button>
-				</Link>
-			</motion.div>
-
-			<div className="container mx-auto px-6 sm:px-8 md:px-12 mt-24">
+			className="bg-black text-black pt-11 relative mt-2">
+			<div className="container mx-auto px-6 sm:px-8 md:px-12 mt-2">
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-10">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
