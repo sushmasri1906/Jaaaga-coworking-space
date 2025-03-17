@@ -9,37 +9,32 @@ const WhyChooseUs = () => {
 			icon: "📍",
 			title: "Prime Location",
 			description:
-				"Easily accessible in the heart of Hyderabad, surrounded by cafes and transport hubs.",
+				"Easily accessible in Hyderabad, near cafes and transport hubs.",
 		},
 		{
 			icon: "💰",
 			title: "Affordable Pricing",
-			description:
-				"Cost-effective coworking space with flexible plans for freelancers and startups.",
+			description: "Flexible plans for freelancers and startups.",
 		},
 		{
 			icon: "📶",
 			title: "High-Speed Internet",
-			description:
-				"Reliable WiFi ensures uninterrupted work and smooth video calls.",
+			description: "Reliable WiFi for smooth video calls.",
 		},
 		{
 			icon: "⏰",
 			title: "24/7 Access",
-			description:
-				"Work at any time that suits your schedule, with round-the-clock access.",
+			description: "Work anytime with round-the-clock access.",
 		},
 		{
 			icon: "🏢",
 			title: "Fully Equipped",
-			description:
-				"AC, ergonomic chairs, meeting rooms, and all essential office amenities.",
+			description: "AC, ergonomic chairs, and office essentials.",
 		},
 		{
 			icon: "🤝",
 			title: "Community & Networking",
-			description:
-				"Collaborate with entrepreneurs, freelancers, and remote workers.",
+			description: "Connect with entrepreneurs and remote workers.",
 		},
 	];
 
@@ -48,7 +43,6 @@ const WhyChooseUs = () => {
 
 	const handleToggle = () => {
 		setExpanded(!expanded);
-
 		if (expanded && sectionRef.current) {
 			setTimeout(() => {
 				sectionRef.current?.scrollIntoView({
@@ -60,26 +54,24 @@ const WhyChooseUs = () => {
 	};
 
 	return (
-		<section
-			ref={sectionRef}
-			className="py-16 text-center bg-yellow-400 relative">
-			<div className="relative max-w-6xl mx-auto px-6 text-gray-900">
+		<section ref={sectionRef} className="py-12 text-center bg-yellow-400">
+			<div className="relative max-w-5xl mx-auto px-4 text-gray-900">
 				<motion.h2
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5 }}
-					className="text-4xl font-bold">
+					className="text-3xl font-bold">
 					Why Choose Us?
 				</motion.h2>
 				<motion.p
 					initial={{ opacity: 0, y: -10 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5, delay: 0.2 }}
-					className="mt-2 text-lg">
-					Discover the benefits of working in a shared workspace.
+					className="mt-1 text-base">
+					Discover the benefits of our coworking space.
 				</motion.p>
 
-				<div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 					<AnimatePresence>
 						{features
 							.slice(0, expanded ? features.length : 3)
@@ -90,12 +82,14 @@ const WhyChooseUs = () => {
 									animate={{ opacity: 1, y: 0 }}
 									exit={{ opacity: 0, y: -20 }}
 									transition={{ duration: 0.4 }}
-									className="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl text-gray-800">
-									<div className="text-5xl">{feature.icon}</div>
-									<h3 className="mt-4 text-2xl font-semibold">
+									className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-lg text-gray-800">
+									<div className="text-4xl">{feature.icon}</div>
+									<h3 className="mt-3 text-xl font-semibold">
 										{feature.title}
 									</h3>
-									<p className="text-gray-700 mt-2">{feature.description}</p>
+									<p className="text-gray-700 mt-1 text-sm text-center">
+										{feature.description}
+									</p>
 								</motion.div>
 							))}
 					</AnimatePresence>
@@ -104,8 +98,8 @@ const WhyChooseUs = () => {
 				<motion.button
 					onClick={handleToggle}
 					whileTap={{ scale: 0.95 }}
-					className="mt-8 px-6 py-3 bg-white text-yellow-500 font-semibold rounded-lg shadow-md transition-all duration-300 ease-in-out 
-               hover:bg-yellow-500 hover:text-white hover:shadow-lg">
+					className="mt-6 px-5 py-2.5 bg-white text-yellow-500 font-medium rounded-md shadow-md transition-all duration-300 ease-in-out 
+               hover:bg-yellow-500 hover:text-white hover:shadow-lg text-sm">
 					{expanded ? "See Less" : "See More"}
 				</motion.button>
 			</div>
