@@ -1,7 +1,11 @@
 "use client";
-import React, { useState } from "react";
+
+import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import Slider, { Settings } from "react-slick";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const images = [
 	"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1742015914/1_advary.jpg",
@@ -11,69 +15,75 @@ const images = [
 	"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1742015974/4_stg4kp.jpg",
 	"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1742015980/5_qfbnhz.jpg",
 	"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1742015985/7_jenhbd.jpg",
-	"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1742015980/5_qfbnhz.jpg",
-	"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1742015985/7_jenhbd.jpg",
 	"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1742016008/10_aquzdq.jpg",
 	"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1742016014/11_eywwv2.jpg",
-	"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1742016036/12_axncda.jpg",
-	"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1742016008/10_aquzdq.jpg",
 	"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1742016036/12_axncda.jpg",
 	"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1742016047/13_cnij3p.jpg",
 	"https://res.cloudinary.com/dsq4uyqbb/image/upload/v1742016076/16_rdvqwj.jpg",
 ];
 
+const NextArrow = ({ onClick }: { onClick?: () => void }) => (
+	<div
+		className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-red-600 p-3 rounded-full cursor-pointer z-10 hover:bg-red-700 transition"
+		onClick={onClick}>
+		<HiChevronRight className="text-white w-6 h-6" />
+	</div>
+);
+
+const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
+	<div
+		className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-red-600 p-3 rounded-full cursor-pointer z-10 hover:bg-red-700 transition"
+		onClick={onClick}>
+		<HiChevronLeft className="text-white w-6 h-6" />
+	</div>
+);
+
 const Gallery = () => {
-	const [selectedImage, setSelectedImage] = useState<string | null>(null);
+	const settings: Settings = {
+		dots: true,
+		infinite: true,
+		speed: 800,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 2500,
+		pauseOnHover: false,
+		nextArrow: <NextArrow />,
+		prevArrow: <PrevArrow />,
+		cssEase: "linear",
+		appendDots: (dots) => (
+			<div className="w-full flex justify-center mt-4">
+				<ul className="flex justify-center items-center gap-1"> {dots} </ul>
+			</div>
+		),
+		customPaging: () => (
+			<div className="w-2 h-2 bg-gray-400 rounded-full hover:bg-red-500 transition-all"></div>
+		),
+	};
 
 	return (
-		<div className="min-h-screen flex flex-col justify-center items-center p-1 bg-white">
-			<motion.h1
-				className="text-5xl md:text-6xl font-bold text-black mb-8"
-				initial={{ opacity: 0, y: -20 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.5 }}>
-				Gallery
-			</motion.h1>
+		<div className="w-screen flex flex-col items-center bg-white relative pb-16">
+			{/* Gallery Heading */}
+			<h1 className="text-5xl font-bold text-black my-4">Gallery</h1>
 
-			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-1 w-full max-w-8xl">
-				{images.map((src, index) => (
-					<motion.div
-						key={index}
-						className="overflow-hidden cursor-pointer"
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.5, delay: index * 0.1 }}
-						onClick={() => setSelectedImage(src)}>
-						<Image
-							src={src}
-							alt={`Gallery Image ${index + 1}`}
-							width={500}
-							height={700}
-							className="w-full h-auto  transition-transform transform hover:scale-105"
-						/>
-					</motion.div>
-				))}
+			{/* Slider with Adjusted Height */}
+			<div className="w-full h-[75vh] max-w-6xl rounded-lg overflow-hidden shadow-xl relative">
+				<Slider {...settings} className="w-full h-full">
+					{images.map((src, index) => (
+						<div
+							key={index}
+							className="w-full h-[75vh] flex justify-center items-center relative">
+							<Image
+								src={src}
+								alt={`Gallery Image ${index + 1}`}
+								width={1920}
+								height={1080}
+								className="w-full h-full object-cover rounded-lg"
+							/>
+						</div>
+					))}
+				</Slider>
 			</div>
-
-			{selectedImage && (
-				<div
-					className="fixed top-0 left-0 w-full h-full bg-white flex justify-center items-center p-2 z-50"
-					onClick={() => setSelectedImage(null)}>
-					<motion.div
-						initial={{ opacity: 0, scale: 0.8 }}
-						animate={{ opacity: 1, scale: 1 }}
-						transition={{ duration: 0.3 }}
-						className="relative max-w-full max-h-full">
-						<Image
-							src={selectedImage}
-							alt="Selected"
-							width={2000}
-							height={1600}
-							className="w-full h-auto max-w-8xl max-h-screen object-fit "
-						/>
-					</motion.div>
-				</div>
-			)}
 		</div>
 	);
 };
