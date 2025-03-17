@@ -123,7 +123,7 @@ const Contact = () => {
 							Join our WhatsApp group for the latest updates:
 						</p>
 						<Link
-							href="https://chat.whatsapp.com/YOUR_GROUP_INVITE_LINK"
+							href="https://chat.whatsapp.com"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="inline-flex items-center bg-green-500 text-white px-5 py-3 rounded-lg mt-3 hover:bg-green-600 transition">
@@ -133,7 +133,7 @@ const Contact = () => {
 					</div>
 
 					{/* Contact Form */}
-					<form className="mt-8 space-y-5" onSubmit={handleSubmit}>
+					{/* <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
 						<input
 							type="text"
 							name="name"
@@ -165,7 +165,7 @@ const Contact = () => {
 							className="w-full bg-yellow-400 text-white py-4 rounded-lg text-lg font-semibold hover:bg-yellow-500 transition">
 							Send Message
 						</button>
-					</form>
+					</form> */}
 				</motion.div>
 			</div>
 		</section>
