@@ -123,7 +123,7 @@ const Contact = () => {
 							Join our WhatsApp group for the latest updates:
 						</p>
 						<Link
-							href="https://chat.whatsapp.com"
+							href="https://chat.whatsapp.com/HYkCqW308vE1Um9c1Z1NEV"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="inline-flex items-center bg-green-500 text-white px-5 py-3 rounded-lg mt-3 hover:bg-green-600 transition">
