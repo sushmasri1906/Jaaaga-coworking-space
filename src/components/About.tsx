@@ -63,7 +63,7 @@ const About = () => {
 									animate={{ opacity: 1, x: 0 }}
 									transition={{ duration: 0.8, delay: 0.7 + index * 0.2 }}
 									className="flex items-center">
-									<span className="text-red-600 text-xl mr-3">✔</span>
+									<span className="text-yellow-400 text-xl mr-3">✔</span>
 									<strong>{item}</strong>
 								</motion.li>
 							))}
@@ -74,7 +74,7 @@ const About = () => {
 						initial={{ opacity: 0, x: 50 }}
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 1, delay: 0.6 }}
-						className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-yellow-400 transition-all duration-300 hover:shadow-2xl">
+						className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-red-600 transition-all duration-300 hover:shadow-2xl">
 						<h3 className="text-2xl font-semibold text-black">Our Community</h3>
 						<p className="text-black mt-3 leading-relaxed">
 							We believe in{" "}
