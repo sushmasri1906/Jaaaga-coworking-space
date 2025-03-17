@@ -13,23 +13,6 @@ const About = () => {
 			transition={{ duration: 1 }}
 			className="bg-gray-50 text-black">
 			<motion.div
-				initial={{ y: -50, opacity: 0 }}
-				animate={{ y: 0, opacity: 1 }}
-				transition={{ duration: 1 }}
-				className="relative w-full h-[400px] flex items-center justify-center text-center">
-				<Image
-					src="https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741419739/plain-yellow-background-sz8rral13llcyqn8_abhjsu.png"
-					alt="Jaaaga Coworking Space"
-					fill
-					className="object-cover brightness-75"
-					priority
-				/>
-				<h1 className="absolute text-black text-4xl md:text-5xl font-bold drop-shadow-lg">
-					About Us
-				</h1>
-			</motion.div>
-
-			<motion.div
 				initial={{ y: 50, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ duration: 1 }}
@@ -80,7 +63,7 @@ const About = () => {
 									animate={{ opacity: 1, x: 0 }}
 									transition={{ duration: 0.8, delay: 0.7 + index * 0.2 }}
 									className="flex items-center">
-									<span className="text-yellow-400 text-xl mr-3">✔</span>
+									<span className="text-red-600 text-xl mr-3">✔</span>
 									<strong>{item}</strong>
 								</motion.li>
 							))}
