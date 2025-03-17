@@ -49,7 +49,6 @@ const WhyChooseUs = () => {
 	const handleToggle = () => {
 		setExpanded(!expanded);
 
-		
 		if (expanded && sectionRef.current) {
 			setTimeout(() => {
 				sectionRef.current?.scrollIntoView({
@@ -63,12 +62,8 @@ const WhyChooseUs = () => {
 	return (
 		<section
 			ref={sectionRef}
-			className="py-16 text-center bg-cover bg-center bg-no-repeat relative"
-			style={{
-				backgroundImage:
-					"url('https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741857657/WhatsApp_Image_2025-03-13_at_14.50.15_9d945515_r33ufg.jpg')",
-			}}>
-			<div className="relative max-w-6xl mx-auto px-6 text-black">
+			className="py-16 text-center bg-yellow-400 relative">
+			<div className="relative max-w-6xl mx-auto px-6 text-gray-900">
 				<motion.h2
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -100,7 +95,7 @@ const WhyChooseUs = () => {
 									<h3 className="mt-4 text-2xl font-semibold">
 										{feature.title}
 									</h3>
-									<p className="text-black mt-2">{feature.description}</p>
+									<p className="text-gray-700 mt-2">{feature.description}</p>
 								</motion.div>
 							))}
 					</AnimatePresence>

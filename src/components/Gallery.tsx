@@ -24,17 +24,19 @@ const images = [
 
 const NextArrow = ({ onClick }: { onClick?: () => void }) => (
 	<div
-		className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-red-600 p-3 rounded-full cursor-pointer z-10 hover:bg-red-700 transition"
-		onClick={onClick}>
-		<HiChevronRight className="text-white w-6 h-6" />
+		className="absolute top-1/2 -translate-y-1/2 right-4 md:right-4 
+		md:translate-y-0 bg-red-600 p-4 rounded-full cursor-pointer z-10 hover:bg-red-700 transition
+		sm:right-1/4 sm:translate-x-1/2">
+		<HiChevronRight className="text-white w-8 h-8" onClick={onClick} />
 	</div>
 );
 
 const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
 	<div
-		className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-red-600 p-3 rounded-full cursor-pointer z-10 hover:bg-red-700 transition"
-		onClick={onClick}>
-		<HiChevronLeft className="text-white w-6 h-6" />
+		className="absolute top-1/2 -translate-y-1/2 left-4 md:left-4 
+		md:translate-y-0 bg-red-600 p-4 rounded-full cursor-pointer z-10 hover:bg-red-700 transition
+		sm:left-1/4 sm:-translate-x-1/2">
+		<HiChevronLeft className="text-white w-8 h-8" onClick={onClick} />
 	</div>
 );
 
@@ -42,44 +44,45 @@ const Gallery = () => {
 	const settings: Settings = {
 		dots: true,
 		infinite: true,
-		speed: 800,
+		speed: 700,
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true,
-		autoplaySpeed: 2500,
+		autoplaySpeed: 3000,
 		pauseOnHover: false,
 		nextArrow: <NextArrow />,
 		prevArrow: <PrevArrow />,
-		cssEase: "linear",
+		cssEase: "ease-in-out",
 		appendDots: (dots) => (
 			<div className="w-full flex justify-center mt-4">
-				<ul className="flex justify-center items-center gap-1"> {dots} </ul>
+				<ul className="flex space-x-2"> {dots} </ul>
 			</div>
 		),
 		customPaging: () => (
-			<div className="w-2 h-2 bg-gray-400 rounded-full hover:bg-red-500 transition-all"></div>
+			<div className="w-3 h-3 bg-gray-400 rounded-full hover:bg-red-500 transition-all"></div>
 		),
 	};
+
 	return (
-		<div className="w-screen flex flex-col items-center bg-white relative pb-16">
+		<div className="w-full flex flex-col items-center bg-white relative pb-4">
 			{/* Gallery Heading */}
 			<h1 className="text-4xl md:text-5xl font-bold text-black my-4">
 				Gallery
 			</h1>
 
 			{/* Responsive Slider */}
-			<div className="w-full min-h-[40vh] sm:h-[50vh] md:h-[65vh] lg:h-[75vh] max-w-8xl overflow-hidden shadow-xl relative">
+			<div className="w-full h-[45vh] sm:h-[55vh] md:h-[65vh] lg:h-[75vh] xl:h-[80vh] max-w-8xl overflow-hidden relative">
 				<Slider {...settings} className="w-full h-full">
 					{images.map((src, index) => (
 						<div
 							key={index}
-							className="w-full min-h-[40vh] sm:h-[50vh] md:h-[65vh] lg:h-[75vh] flex justify-center items-center relative">
+							className="w-full h-full flex justify-center items-center">
 							<Image
 								src={src}
 								alt={`Gallery Image ${index + 1}`}
 								width={1920}
 								height={1080}
-								className="w-full h-full object-cover aspect-[16/9]"
+								className="w-full h-full object-cover"
 							/>
 						</div>
 					))}

@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { FcGoogle } from "react-icons/fc";
 
 const Footer = () => {
 	return (
@@ -68,7 +69,7 @@ const Footer = () => {
 							</Link>
 							<br />
 							<Link href="mailto:info@jaaaga.com" className="text-yellow-300 ">
-								✉️ info@jaaaga.com
+								✉️ infojaaaga@gmail.com
 							</Link>
 						</p>
 					</motion.div>
@@ -76,25 +77,21 @@ const Footer = () => {
 
 				<div className="border-t border-white mt-10 pt-5 flex flex-col md:flex-row items-center justify-between text-sm text-white">
 					<p>
-						&copy; {new Date().getFullYear()} Jaaaga Coworking Space. All Rights
-						Reserved.
+						&copy; {new Date().getFullYear()} Jaaaga Info Solutions LLp. All
+						Rights Reserved.
 					</p>
-					<div className="flex space-x-6 m-3 md:mt-0">
-						{["Facebook", "Twitter", "LinkedIn", "Instagram"].map(
-							(name, index) => (
-								<motion.div
-									key={index}
-									whileHover={{ scale: 1.1 }}
-									whileTap={{ scale: 0.9 }}>
-									<Link
-										href="#"
-										aria-label={`${name} Page`}
-										className="hover:text-yellow-400 transition">
-										{name}
-									</Link>
-								</motion.div>
-							)
-						)}
+					<div className="m-3 md:mt-0">
+						<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+							<Link
+								href="https://g.co/kgs/Cj8ajjB"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="Google Pages"
+								className="flex items-center space-x-2 text-white hover:text-yellow-400 transition">
+								<FcGoogle className="w-6 h-6" />
+								<span>Google Pages</span>
+							</Link>
+						</motion.div>
 					</div>
 				</div>
 

@@ -15,7 +15,9 @@ const services = [
 const Services = () => {
 	return (
 		<div className="container mx-auto px-6 py-30 text-center bg-white">
-			<h2 className="text-3xl font-bold text-black mb-6">Our Services</h2>
+			<h2 className="text-3xl font-bold text-black mb-6">
+				Our Additional Services
+			</h2>
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 				{services.map((service, index) => (
 					<Link key={index} href="/contact" className="flex justify-center">
