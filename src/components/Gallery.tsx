@@ -60,25 +60,26 @@ const Gallery = () => {
 			<div className="w-2 h-2 bg-gray-400 rounded-full hover:bg-red-500 transition-all"></div>
 		),
 	};
-
 	return (
 		<div className="w-screen flex flex-col items-center bg-white relative pb-16">
 			{/* Gallery Heading */}
-			<h1 className="text-5xl font-bold text-black my-4">Gallery</h1>
+			<h1 className="text-4xl md:text-5xl font-bold text-black my-4">
+				Gallery
+			</h1>
 
-			{/* Slider with Adjusted Height */}
-			<div className="w-full h-[75vh] max-w-6xl rounded-lg overflow-hidden shadow-xl relative">
+			{/* Responsive Slider */}
+			<div className="w-full min-h-[40vh] sm:h-[50vh] md:h-[65vh] lg:h-[75vh] max-w-8xl overflow-hidden shadow-xl relative">
 				<Slider {...settings} className="w-full h-full">
 					{images.map((src, index) => (
 						<div
 							key={index}
-							className="w-full h-[75vh] flex justify-center items-center relative">
+							className="w-full min-h-[40vh] sm:h-[50vh] md:h-[65vh] lg:h-[75vh] flex justify-center items-center relative">
 							<Image
 								src={src}
 								alt={`Gallery Image ${index + 1}`}
 								width={1920}
 								height={1080}
-								className="w-full h-full object-cover rounded-lg"
+								className="w-full h-full object-cover aspect-[16/9]"
 							/>
 						</div>
 					))}
