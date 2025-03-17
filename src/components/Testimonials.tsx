@@ -198,25 +198,25 @@ const testimonials = [
 	},
 ];
 
-const renderStars = (rating: number) => {
-	return (
-		<div className="flex mt-2">
-			{[...Array(5)].map((_, index) =>
-				index < rating ? (
-					<FaStar key={index} className="text-yellow-500 text-lg" />
-				) : (
-					<FaRegStar key={index} className="text-black text-lg" />
-				)
-			)}
-		</div>
-	);
-};
+const renderStars = (rating: number) => (
+	<div className="flex mt-2">
+		{[...Array(5)].map((_, index) =>
+			index < rating ? (
+				<FaStar key={index} className="text-yellow-500 text-lg" />
+			) : (
+				<FaRegStar key={index} className="text-black text-lg" />
+			)
+		)}
+	</div>
+);
 
 const Testimonials = () => {
 	const [visibleCount, setVisibleCount] = useState(6);
+	const totalTestimonials = testimonials.length;
+	const isAllShown = visibleCount >= totalTestimonials;
 
-	const handleSeeMore = () => {
-		setVisibleCount((prevCount) => prevCount + 6);
+	const handleToggle = () => {
+		setVisibleCount(isAllShown ? 6 : totalTestimonials);
 	};
 
 	return (
@@ -228,10 +228,10 @@ const Testimonials = () => {
 			}}>
 			<div className="relative z-10 px-4">
 				<motion.h2
-					initial={{ opacity: 0, y: -20 }}
+					initial={{ opacity: 0, y: -10 }}
 					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6 }}
-					className="text-xl font-bold text-white">
+					transition={{ duration: 0.3 }}
+					className="text-xl font-bold text-black">
 					Our Happy Clients
 				</motion.h2>
 
@@ -239,9 +239,9 @@ const Testimonials = () => {
 					{testimonials.slice(0, visibleCount).map((testimonial, index) => (
 						<motion.div
 							key={index}
-							initial={{ opacity: 0, y: 20 }}
+							initial={{ opacity: 0, y: 5 }}
 							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.4, delay: index * 0.1 }}
+							transition={{ duration: 0.2, delay: index * 0.02 }}
 							whileHover={{ scale: 1.02 }}
 							className="bg-white p-4 rounded-md shadow-md text-left">
 							<h3 className="text-sm font-semibold text-black">
@@ -253,11 +253,11 @@ const Testimonials = () => {
 					))}
 				</div>
 
-				{visibleCount < testimonials.length && (
+				{totalTestimonials > 6 && (
 					<button
-						onClick={handleSeeMore}
+						onClick={handleToggle}
 						className="mt-6 px-4 py-2 bg-yellow-500 text-white rounded-lg shadow-md hover:bg-yellow-600">
-						See More
+						{isAllShown ? "See Less" : "See More"}
 					</button>
 				)}
 			</div>
