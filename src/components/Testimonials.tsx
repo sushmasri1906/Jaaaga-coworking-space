@@ -211,12 +211,12 @@ const renderStars = (rating: number) => (
 );
 
 const Testimonials = () => {
-	const [visibleCount, setVisibleCount] = useState(6);
+	const [visibleCount, setVisibleCount] = useState(4); // Shows 4 testimonials initially (2 rows of 2)
 	const totalTestimonials = testimonials.length;
 	const isAllShown = visibleCount >= totalTestimonials;
 
 	const handleToggle = () => {
-		setVisibleCount(isAllShown ? 6 : totalTestimonials);
+		setVisibleCount(isAllShown ? 4 : visibleCount + 4); // Toggle by 4 testimonials (2 rows at a time)
 	};
 
 	return (
@@ -235,7 +235,7 @@ const Testimonials = () => {
 					Our Happy Clients
 				</motion.h2>
 
-				<div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+				<div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
 					{testimonials.slice(0, visibleCount).map((testimonial, index) => (
 						<motion.div
 							key={index}
@@ -253,7 +253,7 @@ const Testimonials = () => {
 					))}
 				</div>
 
-				{totalTestimonials > 6 && (
+				{totalTestimonials > 4 && (
 					<button
 						onClick={handleToggle}
 						className="mt-6 px-4 py-2 bg-yellow-500 text-black rounded-lg shadow-md hover:bg-yellow-600">

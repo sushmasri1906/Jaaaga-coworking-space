@@ -77,8 +77,8 @@ const Gallery = () => {
 							<Image
 								src={src}
 								alt={`Gallery Image ${index + 1}`}
-								width={1500}
-								height={800}
+								width={1920}
+								height={1080}
 								className="w-full h-[75vh] object-cover mx-auto"
 							/>
 						</div>
