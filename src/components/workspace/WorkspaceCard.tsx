@@ -30,7 +30,7 @@ export default function WorkspaceCard(props: WorkspaceCardProps) {
 	);
 
 	return (
-		<div className="bg-white shadow-lg rounded-2xl overflow-hidden transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl max-w-sm mx-auto">
+		<div className="bg-white shadow-lg overflow-hidden transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-2xl max-w-sm mx-auto">
 			<Image
 				src={image || "/placeholder.jpg"}
 				alt={name}
