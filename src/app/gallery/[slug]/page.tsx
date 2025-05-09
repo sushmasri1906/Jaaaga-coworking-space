@@ -5,6 +5,7 @@ import { galleryBySlugQuery } from "../../../../lib/queries";
 import { Gallery } from "../../../../lib/types";
 import Image from "next/image";
 
+export const revalidate = 60;
 // Define the type for the params object
 interface GalleryPageProps {
 	params: Promise<{ slug: string }>;

@@ -14,6 +14,8 @@ interface Workspace {
 	available: boolean;
 }
 
+export const revalidate = 60;
+
 export default async function WorkspacesPage() {
 	const workspaces: Workspace[] = await sanityClient.fetch(
 		getAllWorkspacesQuery

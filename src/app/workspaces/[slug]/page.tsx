@@ -7,6 +7,8 @@ interface Params {
 	params: Promise<{ slug: string }>;
 }
 
+export const revalidate = 60;
+
 export async function generateStaticParams() {
 	const workspaces = await sanityClient.fetch(`
     *[_type == "workspace"]{

@@ -6,6 +6,8 @@ import { Gallery } from "../../../lib/types";
 import Link from "next/link";
 import Image from "next/image"; // Importing the Image component
 
+export const revalidate = 60;
+
 export default async function GalleryPage() {
 	const galleries: Gallery[] = await sanityClient.fetch(allGalleriesQuery);
 
