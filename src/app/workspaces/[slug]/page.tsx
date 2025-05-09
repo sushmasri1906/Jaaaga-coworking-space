@@ -32,7 +32,7 @@ export default async function WorkspaceDetailPage({ params }: Params) {
 	}
 
 	return (
-		<div className="max-w-4xl mx-auto px-6 py-10 my-16 bg-white rounded-2xl shadow-xl space-y-8">
+		<div className="max-w-4xl mx-auto px-6 py-10 my-14 bg-white rounded-2xl shadow-xl space-y-8">
 			<div className="overflow-hidden">
 				<Image
 					src={workspace.image || "/placeholder.jpg"}
