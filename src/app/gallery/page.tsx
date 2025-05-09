@@ -1,10 +1,10 @@
-// app/gallery/page.tsx
+
 
 import { sanityClient } from "../../../lib/sanity";
 import { allGalleriesQuery } from "../../../lib/queries";
 import { Gallery } from "../../../lib/types";
 import Link from "next/link";
-import Image from "next/image"; // Importing the Image component
+import Image from "next/image"; 
 
 export const revalidate = 60;
 
@@ -22,8 +22,8 @@ export default async function GalleryPage() {
 								<Image
 									src={gallery.photos[0].asset.url || "/placeholder-image.jpg"}
 									alt={gallery.photos[0].alt || gallery.name}
-									width={600} // Add width and height for optimization
-									height={300} // Adjust as per your image dimensions
+									width={600} 
+									height={300} 
 									className="object-cover"
 								/>
 							)}

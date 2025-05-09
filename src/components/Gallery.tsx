@@ -62,12 +62,10 @@ const Gallery = () => {
 
 	return (
 		<div className="w-full flex flex-col items-center bg-white relative">
-			{/* Gallery Heading */}
 			<h1 className="text-4xl md:text-5xl font-bold text-black my-4">
 				Gallery
 			</h1>
 
-			{/* Responsive Slider */}
 			<div className="w-full lg:w-[70%] overflow-hidden relative">
 				<Slider {...settings} className="w-full">
 					{images.map((src, index) => (

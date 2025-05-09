@@ -12,23 +12,6 @@ import {
 import Link from "next/link";
 
 const Contact = () => {
-	// const [formData, setFormData] = useState({
-	// 	name: "",
-	// 	email: "",
-	// 	message: "",
-	// });
-
-	// const handleChange = (
-	// 	e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-	// ) => {
-	// 	setFormData({ ...formData, [e.target.name]: e.target.value });
-	// };
-
-	// const handleSubmit = (e: React.FormEvent) => {
-	// 	e.preventDefault();
-	// 	alert("Form submitted successfully!");
-	// };
-
 	return (
 		<section className="py-20 bg-white">
 			<div className="max-w-5xl mx-auto px-6 sm:px-8">
@@ -74,7 +57,6 @@ const Contact = () => {
 					</div>
 				</motion.div>
 
-				{/* Contact Section */}
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -117,7 +99,6 @@ const Contact = () => {
 						</div>
 					</div>
 
-					{/* WhatsApp Group Invite */}
 					<div className="mt-8 text-center">
 						<p className="text-black text-lg font-semibold">
 							Join our WhatsApp group for the latest updates:
@@ -131,41 +112,6 @@ const Contact = () => {
 							Join WhatsApp Group
 						</Link>
 					</div>
-
-					{/* Contact Form */}
-					{/* <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
-						<input
-							type="text"
-							name="name"
-							placeholder="Your Name"
-							value={formData.name}
-							onChange={handleChange}
-							className="w-full p-4 border border-yellow-400 rounded-lg focus:ring-2 focus:ring-yellow-500 text-lg"
-							required
-						/>
-						<input
-							type="email"
-							name="email"
-							placeholder="Your Email"
-							value={formData.email}
-							onChange={handleChange}
-							className="w-full p-4 border border-yellow-400 rounded-lg focus:ring-2 focus:ring-yellow-500 text-lg"
-							required
-						/>
-						<textarea
-							name="message"
-							placeholder="Your Message"
-							rows={4}
-							value={formData.message}
-							onChange={handleChange}
-							className="w-full p-4 border border-yellow-400 rounded-lg focus:ring-2 focus:ring-yellow-500 text-lg"
-							required></textarea>
-						<button
-							type="submit"
-							className="w-full bg-yellow-400 text-white py-4 rounded-lg text-lg font-semibold hover:bg-yellow-500 transition">
-							Send Message
-						</button>
-					</form> */}
 				</motion.div>
 			</div>
 		</section>

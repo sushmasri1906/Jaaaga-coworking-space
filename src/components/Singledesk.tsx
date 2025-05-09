@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function SingleDesk() {
 	return (
 		<section className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between bg-white px-6 py-16">
-			{/* Text Content */}
+			
 			<div className="md:w-1/2 text-center md:text-left space-y-6">
 				<motion.h2
 					className="text-4xl md:text-6xl font-bold text-gray-800 leading-tight"
@@ -31,7 +31,7 @@ export default function SingleDesk() {
 				</motion.div>
 			</div>
 
-			{/* Image Section */}
+		
 			<motion.div
 				className="md:w-1/2 flex justify-center mt-8 md:mt-0"
 				initial={{ opacity: 0, scale: 0.9 }}
