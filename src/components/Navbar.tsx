@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
+	const menuRef = useRef<HTMLDivElement>(null);
 
 	const menuItems = [
 		{ name: "Home", href: "/" },
@@ -16,6 +17,25 @@ const Navbar = () => {
 		{ name: "Gallery", href: "/gallery" },
 		{ name: "Contact", href: "/contact" },
 	];
+
+	// Close menu when clicking outside
+	useEffect(() => {
+		const handleClickOutside = (event: MouseEvent) => {
+			if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+				setIsOpen(false);
+			}
+		};
+
+		if (isOpen) {
+			document.addEventListener("mousedown", handleClickOutside);
+		} else {
+			document.removeEventListener("mousedown", handleClickOutside);
+		}
+
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, [isOpen]);
 
 	return (
 		<motion.nav
@@ -56,6 +76,7 @@ const Navbar = () => {
 			<AnimatePresence>
 				{isOpen && (
 					<motion.div
+						ref={menuRef}
 						initial={{ x: "100%" }}
 						animate={{ x: 0 }}
 						exit={{ x: "100%" }}
