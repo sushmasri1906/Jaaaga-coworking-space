@@ -7,16 +7,14 @@ import Image from "next/image";
 
 // Define the type for the params object
 interface GalleryPageProps {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 }
 
 // Use an async function for fetching data in the new Next.js 13 approach
 export default async function GalleryDetail({ params }: GalleryPageProps) {
-	// Wrap params in a Promise (Simulating async handling of params)
-	const paramsPromise = Promise.resolve(params);
-
 	// Handle the promise for params
-	const { slug } = await paramsPromise;
+	const { slug } = await params;
+	console.log(slug);
 
 	// Fetch gallery data based on the slug
 	const gallery: Gallery = await sanityClient.fetch(galleryBySlugQuery, {
