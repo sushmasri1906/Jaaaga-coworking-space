@@ -10,7 +10,7 @@ export default async function GalleryPage() {
 	const galleries: Gallery[] = await sanityClient.fetch(allGalleriesQuery);
 
 	return (
-		<div className="p-6 mt-15">
+		<div className="p-6 mt-15 bg-white">
 			<h1 className="text-3xl font-bold mb-4">Galleries</h1>
 			<div className="grid md:grid-cols-3 gap-6">
 				{galleries.map((gallery) => (

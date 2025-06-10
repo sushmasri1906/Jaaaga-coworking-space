@@ -22,7 +22,7 @@ export default async function WorkspacesPage() {
 	);
 
 	return (
-		<div className=" mx-auto px-8 py-12 mt-16">
+		<div className=" mx-auto px-8 py-12 mt-16 bg-white">
 			<h1 className="text-4xl font-semibold text-gray-900 mb-8 text-center">
 				All Workspaces
 			</h1>

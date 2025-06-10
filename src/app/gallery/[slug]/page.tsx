@@ -17,7 +17,7 @@ export default async function GalleryDetail({ params }: GalleryPageProps) {
 	});
 
 	return (
-		<div className="p-6 mt-15">
+		<div className="p-6 mt-15 bg-white">
 			<h1 className="text-3xl font-bold mb-6">{gallery.name}</h1>
 
 			<div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">

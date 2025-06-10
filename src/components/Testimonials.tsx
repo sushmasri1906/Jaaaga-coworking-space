@@ -220,48 +220,50 @@ const Testimonials = () => {
 	};
 
 	return (
-		<section
-			className="relative py-12 text-center bg-cover bg-center"
-			style={{
-				backgroundImage:
-					"url('https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741857657/WhatsApp_Image_2025-03-13_at_14.50.15_9d945515_r33ufg.jpg')",
-			}}>
-			<div className="relative z-10 px-4">
-				<motion.h2
-					initial={{ opacity: 0, y: -10 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.3 }}
-					className="text-xl font-bold text-black">
-					Our Happy Clients
-				</motion.h2>
+		<div className="bg-white">
+			<section
+				className="relative py-12 text-center bg-cover bg-center"
+				style={{
+					backgroundImage:
+						"url('https://res.cloudinary.com/dsq4uyqbb/image/upload/v1741857657/WhatsApp_Image_2025-03-13_at_14.50.15_9d945515_r33ufg.jpg')",
+				}}>
+				<div className="relative z-10 px-4">
+					<motion.h2
+						initial={{ opacity: 0, y: -10 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.3 }}
+						className="text-xl font-bold text-black">
+						Our Happy Clients
+					</motion.h2>
 
-				<div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-					{testimonials.slice(0, visibleCount).map((testimonial, index) => (
-						<motion.div
-							key={index}
-							initial={{ opacity: 0, y: 5 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.2, delay: index * 0.02 }}
-							whileHover={{ scale: 1.02 }}
-							className="bg-white p-4 rounded-md shadow-md text-left">
-							<h3 className="text-sm font-semibold text-black">
-								{testimonial.name}
-							</h3>
-							{renderStars(testimonial.rating)}
-							<p className="text-xs text-black mt-1">{testimonial.review}</p>
-						</motion.div>
-					))}
+					<div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+						{testimonials.slice(0, visibleCount).map((testimonial, index) => (
+							<motion.div
+								key={index}
+								initial={{ opacity: 0, y: 5 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.2, delay: index * 0.02 }}
+								whileHover={{ scale: 1.02 }}
+								className="bg-white p-4 rounded-md shadow-md text-left">
+								<h3 className="text-sm font-semibold text-black">
+									{testimonial.name}
+								</h3>
+								{renderStars(testimonial.rating)}
+								<p className="text-xs text-black mt-1">{testimonial.review}</p>
+							</motion.div>
+						))}
+					</div>
+
+					{totalTestimonials > 4 && (
+						<button
+							onClick={handleToggle}
+							className="mt-6 px-4 py-2 bg-yellow-500 text-black rounded-lg shadow-md hover:bg-yellow-600">
+							{isAllShown ? "See Less" : "See More"}
+						</button>
+					)}
 				</div>
-
-				{totalTestimonials > 4 && (
-					<button
-						onClick={handleToggle}
-						className="mt-6 px-4 py-2 bg-yellow-500 text-black rounded-lg shadow-md hover:bg-yellow-600">
-						{isAllShown ? "See Less" : "See More"}
-					</button>
-				)}
-			</div>
-		</section>
+			</section>
+		</div>
 	);
 };
 
