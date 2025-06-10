@@ -61,6 +61,7 @@ export const getAllWorkspaceCategoriesQuery = `
     "slug": slug.current
   }
 `;
+
 export const getWorkspaceBySlugQuery = `
   *[_type == "workspace" && slug.current == $slug][0] {
     _id,
@@ -73,6 +74,16 @@ export const getWorkspaceBySlugQuery = `
     pricePerMonth,
     contactNumber,
     available,
-    "image": image.asset->url
+    "image": image.asset->url,
+    gallery->{
+      name,
+      photos[]{
+        alt,
+        _key,
+        asset->{
+          url
+        }
+      }
+    }
   }
 `;

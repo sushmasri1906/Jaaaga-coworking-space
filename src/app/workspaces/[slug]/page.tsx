@@ -2,6 +2,8 @@ import { sanityClient } from "../../../../lib/sanity";
 import { getWorkspaceBySlugQuery } from "../../../../lib/queries";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { Key } from "react";
 
 interface Params {
 	params: Promise<{ slug: string }>;
@@ -34,62 +36,96 @@ export default async function WorkspaceDetailPage({ params }: Params) {
 	}
 
 	return (
-		<div className="max-w-4xl mx-auto px-6 py-10 my-14 bg-white rounded-2xl shadow-xl space-y-8">
-			<div className="overflow-hidden">
+		<div className="max-w-7xl mx-auto px-6 py-12 bg-white rounded-2xl shadow-2xl my-16">
+			{/* Header Image */}
+			<div className="overflow-hidden rounded-xl shadow">
 				<Image
 					src={workspace.image || "/placeholder.jpg"}
 					alt={workspace.name}
 					width={1200}
 					height={800}
-					className="w-full h-[500px] object-cover transform transition-transform duration-300 hover:scale-105"
+					className="w-full h-[450px] object-cover rounded-xl transition-transform duration-300 hover:scale-105"
 				/>
 			</div>
 
-			<h1 className="text-4xl font-bold text-gray-900 mb-4 text-center">
-				{workspace.name}
-			</h1>
+			{/* Title & Description */}
+			<div className="text-center mt-10 space-y-4">
+				<h1 className="text-4xl font-extrabold text-gray-900">
+					{workspace.name}
+				</h1>
+				<p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+					{workspace.description}
+				</p>
+			</div>
 
-			<p className="text-lg text-gray-700 mb-8 text-center leading-relaxed">
-				{workspace.description}
-			</p>
-
-			<div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-				<div className="space-y-6">
-					<p className="text-xl text-gray-800">
-						<span className="font-semibold">Type:</span> {workspace.type}
-					</p>
-					<p className="text-xl text-gray-800">
-						<span className="font-semibold">Contact:</span>{" "}
-						{workspace.contactNumber}
-					</p>
-				</div>
-
-				<div className="space-y-6">
-					<p className="text-xl text-gray-800">
-						<span className="font-semibold">Price/Day:</span> ₹
-						{workspace.pricePerDay}
-					</p>
-					{workspace.pricePerMonth && (
-						<p className="text-xl text-gray-800">
-							<span className="font-semibold">Price/Month:</span> ₹
-							{workspace.pricePerMonth}
+			{/* Info Grid */}
+			<div className="flex justify-center">
+				<div className="grid grid-cols-1 sm:grid-cols-2 gap-20 m-10">
+					<div className="space-y-4 text-gray-800 border-gray-200 border p-6 rounded-lg shadow-md">
+						<p className="text-xl">
+							<span className="font-semibold">Type:</span> {workspace.type}
 						</p>
-					)}
-					<p
-						className={`text-xl font-medium ${workspace.available ? "text-green-600" : "text-red-600"}`}>
-						<span className="font-semibold">Status:</span>{" "}
-						{workspace.available ? "Available" : "Not Available"}
-					</p>
+						<p className="text-xl">
+							<span className="font-semibold">Contact:</span>{" "}
+							{workspace.contactNumber}
+						</p>
+					</div>
+
+					<div className="space-y-4 text-gray-800 border-gray-200 border p-6 rounded-lg shadow-md">
+						<p className="text-xl">
+							<span className="font-semibold">Price/Day:</span> ₹
+							{workspace.pricePerDay}
+						</p>
+						{workspace.pricePerMonth && (
+							<p className="text-xl">
+								<span className="font-semibold">Price/Month:</span> ₹
+								{workspace.pricePerMonth}
+							</p>
+						)}
+						<p
+							className={`text-xl font-medium ${
+								workspace.available ? "text-green-600" : "text-red-600"
+							}`}>
+							<span className="font-semibold">Status:</span>{" "}
+							{workspace.available ? "Available" : "Not Available"}
+						</p>
+					</div>
 				</div>
 			</div>
 
-			<div className="mt-8 text-center">
+			{/* Call to Book */}
+			<div className="mt-10 text-center">
 				<a
 					href={`tel:${workspace.contactNumber}`}
-					className="inline-block px-8 py-4 text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg text-lg font-medium transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+					className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-4 rounded-lg text-lg font-semibold shadow-lg transition-transform duration-300 hover:scale-105">
 					Call to Book
 				</a>
 			</div>
+
+			{/* Gallery Section */}
+			{workspace.gallery?.photos?.length > 0 && (
+				<div className="mt-16">
+					<h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
+						Workspace Gallery
+					</h2>
+					<div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
+						{workspace.gallery.photos.map((photo: { _key: Key | null | undefined; asset: { url: string | StaticImport; }; alt: string | undefined; }) => (
+							<div
+								key={photo._key}
+								className="overflow-hidden rounded-lg shadow-md break-inside-avoid">
+								<Image
+									src={photo.asset.url}
+									alt={photo.alt || workspace.name}
+									width={800}
+									height={600}
+									sizes="(max-width: 768px) 100vw, 33vw"
+									className="w-full h-auto object-cover rounded-md transition-transform duration-300 hover:scale-105"
+								/>
+							</div>
+						))}
+					</div>
+				</div>
+			)}
 		</div>
 	);
 }
